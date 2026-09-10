@@ -1,0 +1,1302 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ocakbaşı Nar — Asmalımescit'te Anadolu Ocakbaşı</title>
+<meta name="description" content="Beyoğlu Asmalımescit'te, açık ocakta pişen modern Anadolu mutfağı. Ocakbaşı Nar, 2016'dan beri ateşin başında.">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ocakbaşı Nar — Asmalımescit'te Anadolu Ocakbaşı">
+<meta property="og:description" content="Beyoğlu Asmalımescit'te, açık ocakta pişen modern Anadolu mutfağı. Ocakbaşı Nar, 2016'dan beri ateşin başında.">
+<meta property="og:image" content="gorseller/og.jpg">
+
+<!-- Favicon: inline SVG — nar tanesi -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='14' fill='%23E0562A'/><text x='16' y='22' text-anchor='middle' font-size='18' font-family='serif' fill='%23F3EDE4'>N</text></svg>">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ── Reset ─────────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+img,picture,video,canvas,svg{display:block;max-width:100%}
+input,button,textarea,select{font:inherit}
+a{color:inherit;text-decoration:none}
+ul,ol{list-style:none}
+
+/* ── Design tokens ─────────────────────────────────── */
+:root{
+  --bg:     #14110F;
+  --surface:#1E1A17;
+  --text:   #F3EDE4;
+  --text-2: #A39687;
+  --accent: #E0562A;
+  --accent2:#7A2E2E;
+
+  --ff-display:'Instrument Serif',serif;
+  --ff-body:   'Inter',sans-serif;
+
+  /* Fluid type scale */
+  --step--1:clamp(.875rem,.85rem + .12vw,.9375rem);
+  --step-0 :clamp(1rem,.96rem + .22vw,1.125rem);
+  --step-1 :clamp(1.25rem,1.16rem + .43vw,1.5rem);
+  --step-2 :clamp(1.56rem,1.41rem + .76vw,2rem);
+  --step-3 :clamp(1.95rem,1.71rem + 1.24vw,2.66rem);
+  --step-4 :clamp(2.44rem,2.05rem + 1.93vw,3.55rem);
+  --step-5 :clamp(3.05rem,2.46rem + 2.95vw,4.74rem);
+
+  --ease-out-expo:cubic-bezier(.16,1,.3,1);
+  --radius:3px;
+
+  /* mobile bar height */
+  --mobile-bar-h:0px;
+}
+
+/* ── Base ──────────────────────────────────────────── */
+html{
+  scroll-behavior:smooth;
+  -webkit-text-size-adjust:100%;
+}
+body{
+  font-family:var(--ff-body);
+  font-size:var(--step-0);
+  line-height:1.6;
+  color:var(--text);
+  background:var(--bg);
+  overflow-x:hidden;
+  padding-bottom:var(--mobile-bar-h);
+  -webkit-font-smoothing:antialiased;
+}
+@media(max-width:768px){
+  :root{--mobile-bar-h:60px}
+}
+
+h1,h2,h3,h4{
+  font-family:var(--ff-display);
+  line-height:1.05;
+  letter-spacing:-.02em;
+  text-wrap:balance;
+}
+p{text-wrap:pretty}
+
+/* ── Focus ─────────────────────────────────────────── */
+:focus-visible{
+  outline:2px solid var(--accent);
+  outline-offset:3px;
+  border-radius:var(--radius);
+}
+
+/* ── Grain texture — entire page ───────────────────── */
+body::after{
+  content:'';
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:9999;
+  opacity:.03;
+  mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+}
+
+/* ── Utility ───────────────────────────────────────── */
+.wrapper{
+  width:min(90%,1200px);
+  margin-inline:auto;
+}
+.sr-only{
+  position:absolute;width:1px;height:1px;padding:0;margin:-1px;
+  overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;
+}
+
+/* ── Image placeholder ─────────────────────────────── */
+.img-wrap{
+  position:relative;
+  overflow:hidden;
+  border-radius:var(--radius);
+  background:linear-gradient(135deg,var(--surface) 0%,#2a2320 100%);
+}
+.img-wrap::after{
+  content:attr(data-label);
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:var(--ff-body);
+  font-size:var(--step--1);
+  color:var(--text-2);
+  letter-spacing:.05em;
+  text-transform:uppercase;
+  pointer-events:none;
+  opacity:.6;
+}
+.img-wrap img{
+  width:100%;height:100%;
+  object-fit:cover;
+  position:relative;
+  z-index:1;
+}
+
+/* ── Buttons ───────────────────────────────────────── */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  gap:.5em;
+  padding:.85em 1.8em;
+  font-family:var(--ff-body);
+  font-size:var(--step--1);
+  font-weight:600;
+  letter-spacing:.02em;
+  border-radius:var(--radius);
+  border:1.5px solid transparent;
+  cursor:pointer;
+  transition:background .3s ease,color .3s ease,border-color .3s ease,transform .15s ease;
+  min-height:48px;
+  min-width:48px;
+}
+.btn:active{transform:scale(.97)}
+.btn--primary{
+  background:var(--accent);
+  color:var(--text);
+  border-color:var(--accent);
+}
+.btn--primary:hover{
+  background:#c44820;
+  border-color:#c44820;
+}
+.btn--ghost{
+  background:transparent;
+  color:var(--text);
+  border-color:var(--text-2);
+}
+.btn--ghost:hover{
+  border-color:var(--text);
+}
+
+/* ── Reveal animation ─────────────────────────────── */
+.reveal{
+  opacity:1; /* safe default */
+}
+@supports(animation-timeline:view()){
+  .reveal{
+    animation:revealUp 1s var(--ease-out-expo) both;
+    animation-timeline:view();
+    animation-range:entry 0% entry 30%;
+  }
+  @keyframes revealUp{
+    from{opacity:0;transform:translateY(24px)}
+    to{opacity:1;transform:translateY(0)}
+  }
+}
+
+/* IO fallback class toggled by JS */
+.reveal--io{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease-out-expo),transform .7s var(--ease-out-expo)}
+.reveal--io.is-visible{opacity:1;transform:translateY(0)}
+
+/* stagger children */
+.stagger>*{transition-delay:calc(var(--i,0) * 70ms)}
+
+@media(prefers-reduced-motion:reduce){
+  .reveal,.reveal--io,.reveal--io.is-visible{
+    opacity:1!important;
+    transform:none!important;
+    animation:none!important;
+    transition:none!important;
+  }
+}
+
+/* ═══════════════════════════════════════════════════
+   1. NAV
+   ═══════════════════════════════════════════════════ */
+.nav{
+  position:fixed;
+  top:0;left:0;right:0;
+  z-index:100;
+  padding:1rem 0;
+  transition:background .4s ease,backdrop-filter .4s ease,-webkit-backdrop-filter .4s ease;
+}
+.nav.scrolled{
+  background:rgba(20,17,15,.85);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+}
+.nav .wrapper{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.nav__logo{
+  font-family:var(--ff-display);
+  font-size:var(--step-1);
+  letter-spacing:.08em;
+  color:var(--text);
+}
+.nav__links{
+  display:flex;
+  align-items:center;
+  gap:2rem;
+}
+.nav__links a{
+  font-size:var(--step--1);
+  font-weight:500;
+  color:var(--text-2);
+  transition:color .25s ease;
+}
+.nav__links a:hover{color:var(--text)}
+.nav__links .btn{
+  margin-left:.5rem;
+}
+@media(max-width:600px){
+  .nav__links a:not(.btn){display:none}
+  .nav__links .btn{font-size:.8rem;padding:.7em 1.2em}
+}
+
+/* ═══════════════════════════════════════════════════
+   2. HERO
+   ═══════════════════════════════════════════════════ */
+.hero{
+  position:relative;
+  min-height:100svh;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  padding:0 0 5rem;
+  overflow:hidden;
+}
+.hero__bg{
+  position:absolute;
+  inset:0;
+  z-index:0;
+}
+.hero__bg .img-wrap{
+  width:100%;height:100%;
+  border-radius:0;
+}
+/* dark gradient overlay */
+.hero__bg::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top,var(--bg) 0%,rgba(20,17,15,.6) 40%,rgba(20,17,15,.15) 100%);
+  z-index:1;
+}
+/* breathing ember glow */
+@property --ember-x{
+  syntax:'<percentage>';
+  inherits:false;
+  initial-value:50%;
+}
+@property --ember-o{
+  syntax:'<number>';
+  inherits:false;
+  initial-value:0.12;
+}
+.hero__bg::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  z-index:2;
+  background:radial-gradient(ellipse 80% 50% at var(--ember-x) 85%,var(--accent),transparent 70%);
+  opacity:var(--ember-o);
+  animation:ember 12s ease-in-out infinite;
+  pointer-events:none;
+}
+@keyframes ember{
+  0%  {--ember-x:45%;--ember-o:0.10}
+  33% {--ember-x:55%;--ember-o:0.16}
+  66% {--ember-x:48%;--ember-o:0.08}
+  100%{--ember-x:45%;--ember-o:0.10}
+}
+@media(prefers-reduced-motion:reduce){
+  .hero__bg::before{animation:none;opacity:.1}
+}
+.hero__content{
+  position:relative;
+  z-index:3;
+  padding-inline:5%;
+  max-width:860px;
+}
+.hero h1{
+  font-size:var(--step-5);
+  color:var(--text);
+  margin-bottom:.4em;
+}
+.hero__sub{
+  font-size:var(--step-1);
+  color:var(--text-2);
+  margin-bottom:1.8em;
+  max-width:520px;
+}
+.hero__cta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:1rem;
+}
+.hero__scroll{
+  position:absolute;
+  bottom:1.5rem;
+  left:50%;
+  translate:-50% 0;
+  z-index:3;
+  animation:breathe 3s ease-in-out infinite;
+  color:var(--text-2);
+  cursor:default;
+}
+@keyframes breathe{
+  0%,100%{opacity:.4;transform:translateY(0)}
+  50%{opacity:.8;transform:translateY(6px)}
+}
+@media(prefers-reduced-motion:reduce){
+  .hero__scroll{animation:none;opacity:.5}
+}
+
+/* ═══════════════════════════════════════════════════
+   3. ANLATI
+   ═══════════════════════════════════════════════════ */
+.anlati{
+  padding:clamp(5rem,10vw,10rem) 0;
+}
+.anlati .wrapper{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:clamp(2rem,5vw,5rem);
+  align-items:center;
+}
+.anlati__text{
+  font-family:var(--ff-display);
+  font-size:var(--step-3);
+  line-height:1.2;
+  color:var(--text);
+}
+.anlati__text span{
+  color:var(--accent);
+}
+.anlati__img{
+  aspect-ratio:3/4;
+}
+@media(max-width:768px){
+  .anlati .wrapper{
+    grid-template-columns:1fr;
+  }
+  .anlati__img{max-width:400px;margin-inline:auto;width:100%}
+}
+
+/* ═══════════════════════════════════════════════════
+   4. MENÜ
+   ═══════════════════════════════════════════════════ */
+.menu{
+  padding:clamp(5rem,10vw,9rem) 0;
+}
+.menu__header{
+  text-align:center;
+  margin-bottom:3.5rem;
+}
+.menu__header h2{
+  font-size:var(--step-4);
+  margin-bottom:.5em;
+}
+.menu__note{
+  font-size:var(--step--1);
+  color:var(--text-2);
+  font-style:italic;
+}
+.menu__grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:4rem 6rem;
+}
+@media(max-width:768px){
+  .menu__grid{grid-template-columns:1fr;gap:3rem}
+}
+.menu__section h3{
+  font-size:var(--step-2);
+  margin-bottom:1.4em;
+  padding-bottom:.6em;
+  border-bottom:1px solid var(--accent2);
+  color:var(--text);
+}
+.menu__item{
+  display:flex;
+  align-items:baseline;
+  gap:.5rem;
+  padding:.65em 0;
+  border-bottom:1px solid rgba(163,150,135,.12);
+}
+.menu__item-name{
+  font-weight:600;
+  white-space:nowrap;
+  font-size:var(--step-0);
+}
+.menu__item-dots{
+  flex:1;
+  border-bottom:1px dotted var(--text-2);
+  opacity:.3;
+  min-width:1rem;
+  align-self:center;
+  margin-bottom:.3em;
+}
+.menu__item-price{
+  font-weight:600;
+  white-space:nowrap;
+  color:var(--accent);
+  font-size:var(--step-0);
+}
+.menu__item-desc{
+  display:block;
+  font-size:var(--step--1);
+  color:var(--text-2);
+  padding:.2em 0 .3em;
+  line-height:1.4;
+}
+
+/* ═══════════════════════════════════════════════════
+   5. MEKÂN (Galeri)
+   ═══════════════════════════════════════════════════ */
+.mekan{
+  padding:clamp(5rem,10vw,9rem) 0;
+}
+.mekan__header{
+  text-align:center;
+  margin-bottom:3rem;
+}
+.mekan__header h2{
+  font-size:var(--step-4);
+}
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  grid-template-rows:auto auto;
+  gap:.75rem;
+}
+.gallery .img-wrap{
+  transition:opacity .5s ease,filter .5s ease,transform .5s ease;
+}
+.gallery:has(.img-wrap:hover) .img-wrap:not(:hover){
+  opacity:.35;
+  filter:grayscale(.6);
+}
+.gallery .img-wrap:hover{
+  transform:scale(1.02);
+}
+.gallery__wide{grid-column:1/3;aspect-ratio:16/9}
+.gallery__tall-1{grid-column:3/4;grid-row:1/3;aspect-ratio:3/4}
+.gallery__tall-2{grid-column:4/5;grid-row:1/3;aspect-ratio:3/4}
+.gallery__sq-1{aspect-ratio:1/1}
+.gallery__sq-2{aspect-ratio:1/1}
+@media(max-width:768px){
+  .gallery{
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:auto;
+  }
+  .gallery__wide{grid-column:1/-1;aspect-ratio:16/9}
+  .gallery__tall-1{grid-column:1/2;grid-row:auto;aspect-ratio:3/4}
+  .gallery__tall-2{grid-column:2/3;grid-row:auto;aspect-ratio:3/4}
+  .gallery__sq-1{grid-column:1/2;aspect-ratio:1/1}
+  .gallery__sq-2{grid-column:2/3;aspect-ratio:1/1}
+}
+
+/* ═══════════════════════════════════════════════════
+   6. BİLGİ
+   ═══════════════════════════════════════════════════ */
+.bilgi{
+  padding:clamp(5rem,10vw,9rem) 0;
+}
+.bilgi .wrapper{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:3rem;
+}
+@media(max-width:768px){
+  .bilgi .wrapper{grid-template-columns:1fr;gap:2.5rem}
+}
+.bilgi__col h3{
+  font-size:var(--step-1);
+  margin-bottom:1em;
+  color:var(--accent);
+}
+.bilgi__col p,
+.bilgi__col address{
+  color:var(--text-2);
+  font-style:normal;
+  line-height:1.7;
+}
+.bilgi__col a{
+  transition:color .2s ease;
+}
+.bilgi__col a:hover{color:var(--accent)}
+
+/* hours table */
+.hours-table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:var(--step--1);
+}
+.hours-table td{
+  padding:.45em 0;
+  border-bottom:1px solid rgba(163,150,135,.08);
+}
+.hours-table td:last-child{
+  text-align:right;
+  color:var(--text);
+}
+
+/* status badge */
+.status-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:.4em;
+  padding:.35em .9em;
+  border-radius:100px;
+  font-size:var(--step--1);
+  font-weight:500;
+  margin-top:1em;
+}
+.status-badge::before{
+  content:'';
+  width:8px;height:8px;
+  border-radius:50%;
+}
+.status-badge.open{
+  background:rgba(72,187,120,.12);
+  color:#48BB78;
+}
+.status-badge.open::before{
+  background:#48BB78;
+  animation:pulse-dot 2s ease-in-out infinite;
+}
+@keyframes pulse-dot{
+  0%,100%{opacity:1}
+  50%{opacity:.4}
+}
+.status-badge.closed{
+  background:rgba(224,86,42,.1);
+  color:var(--accent);
+}
+.status-badge.closed::before{
+  background:var(--accent);
+}
+@media(prefers-reduced-motion:reduce){
+  .status-badge.open::before{animation:none}
+}
+
+/* map placeholder */
+.map-placeholder{
+  position:relative;
+  aspect-ratio:16/10;
+  border-radius:var(--radius);
+  background:var(--surface);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:1rem;
+  margin-top:1rem;
+  overflow:hidden;
+}
+.map-placeholder svg{
+  color:var(--text-2);
+  opacity:.5;
+}
+
+/* ═══════════════════════════════════════════════════
+   7. REZERVASYON KAPANIŞI
+   ═══════════════════════════════════════════════════ */
+.rez{
+  padding:clamp(5rem,10vw,8rem) 0;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.rez::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;
+  height:2px;
+  background:linear-gradient(90deg,transparent,var(--accent),var(--accent2),transparent);
+}
+.rez h2{
+  font-size:var(--step-4);
+  margin-bottom:.6em;
+}
+.rez__phone{
+  font-size:var(--step-1);
+  color:var(--text-2);
+  margin-top:1.2em;
+}
+.rez__phone a{
+  color:var(--text);
+  transition:color .2s ease;
+}
+.rez__phone a:hover{color:var(--accent)}
+.rez__note{
+  margin-top:1em;
+  font-size:var(--step--1);
+  color:var(--text-2);
+}
+
+/* ═══════════════════════════════════════════════════
+   8. FOOTER
+   ═══════════════════════════════════════════════════ */
+.footer{
+  padding:2rem 0;
+  border-top:1px solid rgba(163,150,135,.1);
+}
+.footer .wrapper{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:1rem;
+  font-size:var(--step--1);
+  color:var(--text-2);
+}
+.footer__logo{
+  font-family:var(--ff-display);
+  font-size:var(--step-1);
+  letter-spacing:.08em;
+  color:var(--text);
+}
+.footer a:hover{color:var(--accent)}
+
+/* ═══════════════════════════════════════════════════
+   9. WHATSAPP BUTONU
+   ═══════════════════════════════════════════════════ */
+.wa-btn{
+  position:fixed;
+  bottom:1.5rem;
+  right:1.5rem;
+  z-index:90;
+  width:56px;height:56px;
+  border-radius:50%;
+  background:var(--accent);
+  color:var(--text);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 4px 20px rgba(224,86,42,.3);
+  transition:width .35s var(--ease-out-expo),border-radius .35s var(--ease-out-expo),box-shadow .25s ease;
+  overflow:hidden;
+  white-space:nowrap;
+  border:none;
+  cursor:pointer;
+  text-decoration:none;
+}
+.wa-btn svg{
+  flex-shrink:0;
+}
+.wa-btn__text{
+  max-width:0;
+  overflow:hidden;
+  opacity:0;
+  font-size:var(--step--1);
+  font-weight:600;
+  transition:max-width .35s var(--ease-out-expo),opacity .25s ease,margin .35s ease;
+  margin-left:0;
+}
+@media(hover:hover){
+  .wa-btn:hover{
+    width:auto;
+    padding-inline:1.2em;
+    border-radius:28px;
+    box-shadow:0 6px 28px rgba(224,86,42,.4);
+  }
+  .wa-btn:hover .wa-btn__text{
+    max-width:200px;
+    opacity:1;
+    margin-left:.5em;
+  }
+}
+@media(max-width:768px){
+  .wa-btn{bottom:calc(var(--mobile-bar-h) + 1rem)}
+}
+
+/* ═══════════════════════════════════════════════════
+   10. MOBİL ALT ÇUBUK
+   ═══════════════════════════════════════════════════ */
+.mobile-bar{
+  display:none;
+}
+@media(max-width:768px){
+  .mobile-bar{
+    display:flex;
+    position:fixed;
+    bottom:0;left:0;right:0;
+    z-index:95;
+    height:60px;
+    background:rgba(20,17,15,.75);
+    backdrop-filter:blur(16px);
+    -webkit-backdrop-filter:blur(16px);
+    border-top:1px solid rgba(163,150,135,.1);
+  }
+  .mobile-bar a{
+    flex:1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:.5em;
+    font-size:var(--step--1);
+    font-weight:600;
+    color:var(--text);
+    min-height:48px;
+    transition:background .2s ease;
+  }
+  .mobile-bar a:first-child{
+    border-right:1px solid rgba(163,150,135,.1);
+  }
+  .mobile-bar a:active{
+    background:rgba(224,86,42,.15);
+  }
+}
+
+/* ═══════════════════════════════════════════════════
+   Section dividers
+   ═══════════════════════════════════════════════════ */
+.section-line{
+  width:min(90%,1200px);
+  margin-inline:auto;
+  height:1px;
+  background:linear-gradient(90deg,transparent,var(--accent2),transparent);
+  opacity:.4;
+}
+</style>
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Restaurant",
+  "name":"Ocakbaşı Nar",
+  "image":"gorseller/og.jpg",
+  "url":"",
+  "telephone":"0212 XXX XX XX",
+  "servesCuisine":"Anadolu Ocakbaşı",
+  "priceRange":"₺₺₺",
+  "address":{
+    "@type":"PostalAddress",
+    "streetAddress":"Asmalımescit Mah. Sofyalı Sk. No:14",
+    "addressLocality":"Beyoğlu",
+    "addressRegion":"İstanbul",
+    "postalCode":"34430",
+    "addressCountry":"TR"
+  },
+  "openingHoursSpecification":[
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday"],"opens":"12:00","closes":"00:00"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Friday","Saturday"],"opens":"18:00","closes":"01:00"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"13:00","closes":"23:00"}
+  ]
+}
+</script>
+</head>
+
+<body>
+
+<!-- ░░░ NAV ░░░ -->
+<header class="nav" id="nav" role="banner">
+  <div class="wrapper">
+    <a href="#" class="nav__logo" aria-label="Ocakbaşı Nar ana sayfa">NAR</a>
+    <nav class="nav__links" aria-label="Ana menü">
+      <a href="#menu">Menü</a>
+      <a href="#mekan">Mekân</a>
+      <a href="#bilgi">İletişim</a>
+      <a href="https://wa.me/905XXXXXXXXX?text=Merhaba%2C%20rezervasyon%20yapmak%20istiyorum."
+         class="btn btn--primary" target="_blank" rel="noopener">Rezervasyon</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ░░░ HERO ░░░ -->
+<section class="hero" id="hero">
+  <div class="hero__bg">
+    <div class="img-wrap" data-label="Mekân — 16:9">
+      <img src="gorseller/hero.jpg" alt="Ocakbaşı Nar'ın sıcak atmosferinde açık ocağın başında bir akşam" width="1600" height="900">
+    </div>
+  </div>
+  <div class="hero__content">
+    <h1>Ateşin başında<br>bir akşam</h1>
+    <p class="hero__sub">Asmalımescit'te, açık ocakta pişen Anadolu mutfağı.</p>
+    <div class="hero__cta">
+      <a href="https://wa.me/905XXXXXXXXX?text=Merhaba%2C%20rezervasyon%20yapmak%20istiyorum."
+         class="btn btn--primary" target="_blank" rel="noopener">
+        Rezervasyon Yap
+      </a>
+      <a href="#menu" class="btn btn--ghost">
+        Menüyü Gör
+      </a>
+    </div>
+  </div>
+  <!-- scroll hint -->
+  <div class="hero__scroll" aria-hidden="true">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 5v14M5 12l7 7 7-7"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ░░░ ANLATI ░░░ -->
+<section class="anlati reveal" aria-labelledby="anlati-heading">
+  <div class="wrapper">
+    <div class="anlati__text">
+      <h2 id="anlati-heading" class="sr-only">Hikâyemiz</h2>
+      <p>Ocak <span>2016'dan beri sönmedi.</span> Şef Kerem Atalay, Gaziantep'in sokaklarında öğrendiği tarifleri İstanbul'un kalbine taşıdı. Menümüz mevsimle değişir, ocaktan çıkanlar her akşam farklıdır — ama ateşin ritmi hep aynı kalır.</p>
+    </div>
+    <div class="img-wrap anlati__img" data-label="Şef — 3:4">
+      <img src="gorseller/anlati.jpg" alt="Şef Kerem ocak başında çalışırken" width="600" height="800" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<div class="section-line"></div>
+
+<!-- ░░░ MENÜ ░░░ -->
+<section class="menu" id="menu" aria-labelledby="menu-heading">
+  <div class="wrapper">
+    <div class="menu__header reveal">
+      <h2 id="menu-heading">Menü</h2>
+      <p class="menu__note">Menü mevsime göre değişir, ocaktan çıkanlar günlüktür.</p>
+    </div>
+    <div class="menu__grid">
+      <!-- Başlangıçlar -->
+      <div class="menu__section reveal">
+        <h3>Başlangıçlar</h3>
+        <div class="menu__item">
+          <span class="menu__item-name">Közlenmiş patlıcan ezmesi</span>
+          <span class="menu__item-dots"></span>
+          <span class="menu__item-price">₺180</span>
+        </div>
+        <span class="menu__item-desc">Odun ateşinde közlenmiş, sarımsak ve nar ekşili</span>
+
+        <div class="menu__item">
+          <span class="menu__item-name">Antep usulü içli köfte</span>
+          <span class="menu__item-dots"></span>
+          <span class="menu__item-price">₺220</span>
+        </div>
+        <span class="menu__item-desc">Cevizli iç harcı, yoğurt ve tereyağı sosuyla</span>
+
+        <div class="menu__item">
+          <span class="menu__item-name">Atom biber dolma</span>
+          <span class="menu__item-dots"></span>
+          <span class="menu__item-price">₺160</span>
+        </div>
+        <span class="menu__item-desc">Keçi peyniri ve yeşillik dolgulu, zeytinyağlı</span>
+
+        <div class="menu__item">
+          <span class="menu__item-name">Lahmacun</span>
+          <span class="menu__item-dots"></span>
+          <span class="menu__item-price">₺140</span>
+        </div>
+        <span class="menu__item-desc">İnce hamur, taş fırında, maydanoz ve limonla</span>
+
+        <div class="menu__item">
+          <span class="menu__item-name">Humus tabağı</span>
+          <span class="menu__item-dots"></span>
+          <span class="menu__item-price">₺170</span>
+        </div>
+        <span class="menu__item-desc">Tahin, kuru biber yağı ve çam fıstığıyla</span>
+      </div>
+
+      <!-- Ocaktan -->
+      <div class="menu__section reveal">
+        <h3>Ocaktan</h3>
+        <div class="menu__item">
+          <span class="menu__item-name">Kaburga şiş</span>
+          <span class="menu__item-dots"></span>
+          <span class="menu__item-price">₺680</span>
+        </div>
+        <span class="menu__item-desc">Kuzu kaburga, 24 saat marine, meşe közünde</span>
+
+        <div class="menu__item">
+          <span class="menu__item-name">Patlıcan kebabı</span>
+          <span class="menu__item-dots"></span>
+          <span class="menu__item-price">₺540</span>
+        </div>
+        <span class="menu__item-desc">Kıyma ve patlıcan katmerli, domates soslu</span>
+
+        <div class="menu__item">
+          <span class="menu__item-name">Kuşbaşı tandır</span>
+          <span class="menu__item-dots"></span>
+          <span class="menu__item-price">₺620</span>
+        </div>
+        <span class="menu__item-desc">Dana kuşbaşı, 6 saat pişirilmiş, lavaşla</span>
+
+        <div class="menu__item">
+          <span class="menu__item-name">Adana kebap</span>
+          <span class="menu__item-dots"></span>
+          <span class="menu__item-price">₺480</span>
+        </div>
+        <span class="menu__item-desc">Zırh kıyma, acılı, közde biber ve domatesle</span>
+
+        <div class="menu__item">
+          <span class="menu__item-name">Tavuk kanat</span>
+          <span class="menu__item-dots"></span>
+          <span class="menu__item-price">₺380</span>
+        </div>
+        <span class="menu__item-desc">Sumak ve isot marine, közde, sarımsak ezmeyle</span>
+
+        <div class="menu__item">
+          <span class="menu__item-name">Ciğer şiş</span>
+          <span class="menu__item-dots"></span>
+          <span class="menu__item-price">₺420</span>
+        </div>
+        <span class="menu__item-desc">Dana ciğer, soğan ve maydanoz salatası eşliğinde</span>
+      </div>
+
+      <!-- Yanına -->
+      <div class="menu__section reveal">
+        <h3>Yanına</h3>
+        <div class="menu__item">
+          <span class="menu__item-name">Mevsim salatası</span>
+          <span class="menu__item-dots"></span>
+          <span class="menu__item-price">₺120</span>
+        </div>
+        <span class="menu__item-desc">Çiftlik domatesi, salatalık, sumak soğan</span>
+
+        <div class="menu__item">
+          <span class="menu__item-name">Közde biber ve domates</span>
+          <span class="menu__item-dots"></span>
+          <span class="menu__item-price">₺90</span>
+        </div>
+        <span class="menu__item-desc">Ocakta közlenmiş, zeytinyağı damlatılmış</span>
+
+        <div class="menu__item">
+          <span class="menu__item-name">Pilav</span>
+          <span class="menu__item-dots"></span>
+          <span class="menu__item-price">₺100</span>
+        </div>
+        <span class="menu__item-desc">Tereyağlı pirinç pilavı, şehriye kızartmalı</span>
+
+        <div class="menu__item">
+          <span class="menu__item-name">Pide ekmeği</span>
+          <span class="menu__item-dots"></span>
+          <span class="menu__item-price">₺60</span>
+        </div>
+        <span class="menu__item-desc">Taş fırında, her masaya taze çıkar</span>
+      </div>
+
+      <!-- Tatlı -->
+      <div class="menu__section reveal">
+        <h3>Tatlı</h3>
+        <div class="menu__item">
+          <span class="menu__item-name">Fırın sütlaç</span>
+          <span class="menu__item-dots"></span>
+          <span class="menu__item-price">₺180</span>
+        </div>
+        <span class="menu__item-desc">Güveçte, üstü karamelize, tarçınlı</span>
+
+        <div class="menu__item">
+          <span class="menu__item-name">Künefe</span>
+          <span class="menu__item-dots"></span>
+          <span class="menu__item-price">₺240</span>
+        </div>
+        <span class="menu__item-desc">Hatay usulü, tel kadayıf ve tuzsuz peynirle</span>
+
+        <div class="menu__item">
+          <span class="menu__item-name">Antep fıstıklı baklava</span>
+          <span class="menu__item-dots"></span>
+          <span class="menu__item-price">₺260</span>
+        </div>
+        <span class="menu__item-desc">Günlük, Gaziantep'ten, 4 dilim</span>
+
+        <div class="menu__item">
+          <span class="menu__item-name">Közde ananas</span>
+          <span class="menu__item-dots"></span>
+          <span class="menu__item-price">₺190</span>
+        </div>
+        <span class="menu__item-desc">Ocakta karamelize, kaymak ve bal eşliğinde</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-line"></div>
+
+<!-- ░░░ MEKÂN (GALERİ) ░░░ -->
+<section class="mekan" id="mekan" aria-labelledby="mekan-heading">
+  <div class="wrapper">
+    <div class="mekan__header reveal">
+      <h2 id="mekan-heading">Mekân</h2>
+    </div>
+    <div class="gallery reveal">
+      <div class="img-wrap gallery__wide" data-label="Salon — 16:9">
+        <img src="gorseller/mekan-1.jpg" alt="Ocakbaşı Nar'ın salonu, dolu bir akşam" width="1600" height="900" loading="lazy">
+      </div>
+      <div class="img-wrap gallery__tall-1" data-label="Masa detayı — 3:4">
+        <img src="gorseller/mekan-2.jpg" alt="Masa üzerinde yemek ve şarap detayı" width="600" height="800" loading="lazy">
+      </div>
+      <div class="img-wrap gallery__tall-2" data-label="Ocaktan şiş — 3:4">
+        <img src="gorseller/mekan-3.jpg" alt="Ocaktan çıkan şiş kebabı, yakın plan" width="600" height="800" loading="lazy">
+      </div>
+      <div class="img-wrap gallery__sq-1" data-label="Bakır tabak — 1:1">
+        <img src="gorseller/mekan-4.jpg" alt="Bakır tabakta közlenmiş biber detayı" width="600" height="600" loading="lazy">
+      </div>
+      <div class="img-wrap gallery__sq-2" data-label="Duvar dokusu — 1:1">
+        <img src="gorseller/mekan-5.jpg" alt="Mekânın taş duvar dokusu" width="600" height="600" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-line"></div>
+
+<!-- ░░░ BİLGİ ░░░ -->
+<section class="bilgi" id="bilgi" aria-labelledby="bilgi-heading">
+  <h2 id="bilgi-heading" class="sr-only">İletişim Bilgileri</h2>
+  <div class="wrapper">
+    <!-- Adres + harita -->
+    <div class="bilgi__col reveal">
+      <h3>Adres</h3>
+      <address>
+        Asmalımescit Mah.<br>
+        Sofyalı Sk. No:14<br>
+        Beyoğlu / İstanbul
+      </address>
+      <div class="map-placeholder">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7Z"/>
+          <circle cx="12" cy="9" r="2.5"/>
+        </svg>
+        <a href="https://www.google.com/maps/search/Asmal%C4%B1mescit+Mah.+Sofyal%C4%B1+Sk.+No:14+Beyoğlu+İstanbul"
+           class="btn btn--ghost" target="_blank" rel="noopener" style="font-size:var(--step--1)">
+          Yol Tarifi Al
+        </a>
+      </div>
+    </div>
+
+    <!-- Saatler -->
+    <div class="bilgi__col reveal">
+      <h3>Saatler</h3>
+      <table class="hours-table">
+        <tbody>
+          <tr><td>Pazartesi</td><td>12:00 – 00:00</td></tr>
+          <tr><td>Salı</td><td>12:00 – 00:00</td></tr>
+          <tr><td>Çarşamba</td><td>12:00 – 00:00</td></tr>
+          <tr><td>Perşembe</td><td>12:00 – 00:00</td></tr>
+          <tr><td>Cuma</td><td>18:00 – 01:00</td></tr>
+          <tr><td>Cumartesi</td><td>18:00 – 01:00</td></tr>
+          <tr><td>Pazar</td><td>13:00 – 23:00</td></tr>
+        </tbody>
+      </table>
+      <div id="status-badge" class="status-badge" aria-live="polite"></div>
+    </div>
+
+    <!-- İletişim -->
+    <div class="bilgi__col reveal">
+      <h3>İletişim</h3>
+      <p>
+        <a href="tel:+90212XXXXXXX">0212 XXX XX XX</a><br><br>
+        <a href="https://wa.me/905XXXXXXXXX?text=Merhaba%2C%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener">
+          <!-- WhatsApp inline icon -->
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display:inline;vertical-align:middle;margin-right:.3em">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347Z"/>
+            <path fill-rule="evenodd" d="M12.004 2c-5.523 0-9.996 4.476-9.996 9.998a9.96 9.96 0 0 0 1.382 5.1L2 22l5.067-1.328A9.95 9.95 0 0 0 12.004 22C17.525 22 22 17.522 22 11.998 22 6.476 17.525 2 12.004 2Zm0 18.15a8.11 8.11 0 0 1-4.2-1.17l-.3-.18-3.117.817.832-3.04-.196-.313a8.14 8.14 0 0 1-1.248-4.316c0-4.5 3.664-8.16 8.165-8.16 4.5 0 8.163 3.66 8.163 8.16s-3.664 8.201-8.1 8.201Z" clip-rule="evenodd"/>
+          </svg>
+          WhatsApp'tan yazın
+        </a><br><br>
+        <a href="https://instagram.com/ocakbasinar" target="_blank" rel="noopener">
+          <!-- Instagram inline icon -->
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-right:.3em">
+            <rect x="2" y="2" width="20" height="20" rx="5"/>
+            <circle cx="12" cy="12" r="5"/>
+            <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/>
+          </svg>
+          @ocakbasinar
+        </a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<div class="section-line"></div>
+
+<!-- ░░░ REZERVASYON KAPANIŞI ░░░ -->
+<section class="rez reveal" aria-labelledby="rez-heading">
+  <div class="wrapper">
+    <h2 id="rez-heading">Masanızı ayıralım.</h2>
+    <a href="https://wa.me/905XXXXXXXXX?text=Merhaba%2C%20rezervasyon%20yapmak%20istiyorum."
+       class="btn btn--primary" target="_blank" rel="noopener" style="font-size:var(--step-1);padding:1em 2.5em;margin-top:.5em">
+      <!-- WhatsApp icon -->
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347Z"/>
+        <path fill-rule="evenodd" d="M12.004 2c-5.523 0-9.996 4.476-9.996 9.998a9.96 9.96 0 0 0 1.382 5.1L2 22l5.067-1.328A9.95 9.95 0 0 0 12.004 22C17.525 22 22 17.522 22 11.998 22 6.476 17.525 2 12.004 2Zm0 18.15a8.11 8.11 0 0 1-4.2-1.17l-.3-.18-3.117.817.832-3.04-.196-.313a8.14 8.14 0 0 1-1.248-4.316c0-4.5 3.664-8.16 8.165-8.16 4.5 0 8.163 3.66 8.163 8.16s-3.664 8.201-8.1 8.201Z" clip-rule="evenodd"/>
+      </svg>
+      WhatsApp'tan Rezervasyon
+    </a>
+    <p class="rez__phone">veya arayın: <a href="tel:+90212XXXXXXX">0212 XXX XX XX</a></p>
+    <p class="rez__note">6 kişi ve üzeri için lütfen arayın.</p>
+  </div>
+</section>
+
+<!-- ░░░ FOOTER ░░░ -->
+<footer class="footer" role="contentinfo">
+  <div class="wrapper">
+    <span class="footer__logo">NAR</span>
+    <span>© 2026 Ocakbaşı Nar. Tüm hakları saklıdır.</span>
+    <a href="https://dijikod.com" target="_blank" rel="noopener">Site: DijiKod</a>
+  </div>
+</footer>
+
+<!-- ░░░ WHATSAPP SABİT BUTON ░░░ -->
+<a href="https://wa.me/905XXXXXXXXX?text=Merhaba%2C%20bilgi%20almak%20istiyorum."
+   class="wa-btn" target="_blank" rel="noopener" aria-label="WhatsApp ile iletişime geçin">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347Z"/>
+    <path fill-rule="evenodd" d="M12.004 2c-5.523 0-9.996 4.476-9.996 9.998a9.96 9.96 0 0 0 1.382 5.1L2 22l5.067-1.328A9.95 9.95 0 0 0 12.004 22C17.525 22 22 17.522 22 11.998 22 6.476 17.525 2 12.004 2Zm0 18.15a8.11 8.11 0 0 1-4.2-1.17l-.3-.18-3.117.817.832-3.04-.196-.313a8.14 8.14 0 0 1-1.248-4.316c0-4.5 3.664-8.16 8.165-8.16 4.5 0 8.163 3.66 8.163 8.16s-3.664 8.201-8.1 8.201Z" clip-rule="evenodd"/>
+  </svg>
+  <span class="wa-btn__text">WhatsApp'tan yazın</span>
+</a>
+
+<!-- ░░░ MOBİL ALT ÇUBUK ░░░ -->
+<div class="mobile-bar" role="navigation" aria-label="Hızlı iletişim">
+  <a href="tel:+90212XXXXXXX" aria-label="Ara">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/>
+    </svg>
+    Ara
+  </a>
+  <a href="https://www.google.com/maps/search/Asmal%C4%B1mescit+Mah.+Sofyal%C4%B1+Sk.+No:14+Beyoğlu+İstanbul"
+     target="_blank" rel="noopener" aria-label="Yol tarifi al">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7Z"/>
+      <circle cx="12" cy="9" r="2.5"/>
+    </svg>
+    Yol Tarifi
+  </a>
+</div>
+
+<script>
+/* ═══════════════════════════════════════════════════
+   NAV SCROLL STATE
+   ═══════════════════════════════════════════════════ */
+(function(){
+  var nav=document.getElementById('nav');
+  var last=0;
+  function check(){
+    var y=window.scrollY;
+    nav.classList.toggle('scrolled',y>60);
+    last=y;
+  }
+  window.addEventListener('scroll',check,{passive:true});
+  check();
+})();
+
+/* ═══════════════════════════════════════════════════
+   REVEAL — IO FALLBACK (when animation-timeline
+   is not supported)
+   ═══════════════════════════════════════════════════ */
+(function(){
+  if(CSS.supports&&CSS.supports('animation-timeline','view()'))return;
+  var els=document.querySelectorAll('.reveal');
+  els.forEach(function(el){el.classList.add('reveal--io')});
+  if(!('IntersectionObserver' in window)){
+    els.forEach(function(el){el.classList.add('is-visible')});
+    return;
+  }
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.classList.add('is-visible');
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:0.12});
+  els.forEach(function(el){io.observe(el)});
+})();
+
+/* ═══════════════════════════════════════════════════
+   OPEN/CLOSED STATUS BADGE
+   ═══════════════════════════════════════════════════ */
+(function(){
+  // Schedule object: keys are JS getDay() values (0=Sun … 6=Sat)
+  // Each entry is an array of [openHour, openMin, closeHour, closeMin] ranges.
+  // Close times past midnight are expressed as 24+ (e.g., 25 = 01:00 next day).
+  var schedule={
+    1:[[12,0,15,0],[18,0,24,0]],  // Pazartesi
+    2:[[12,0,15,0],[18,0,24,0]],  // Salı
+    3:[[12,0,15,0],[18,0,24,0]],  // Çarşamba
+    4:[[12,0,15,0],[18,0,24,0]],  // Perşembe
+    5:[[18,0,25,0]],              // Cuma (01:00'e kadar = 25)
+    6:[[18,0,25,0]],              // Cumartesi
+    0:[[13,0,23,0]]               // Pazar
+  };
+
+  var dayNames=['Pazar','Pazartesi','Salı','Çarşamba','Perşembe','Cuma','Cumartesi'];
+
+  function pad(n){return n<10?'0'+n:''+n}
+
+  function update(){
+    var badge=document.getElementById('status-badge');
+    if(!badge)return;
+    var now=new Date();
+    var day=now.getDay();
+    var h=now.getHours();
+    var m=now.getMinutes();
+    var nowMin=h*60+m;
+    var ranges=schedule[day]||[];
+    var isOpen=false;
+    var closeAt='';
+
+    // Check if currently in a range
+    for(var i=0;i<ranges.length;i++){
+      var openMin=ranges[i][0]*60+ranges[i][1];
+      var closeMin=ranges[i][2]*60+ranges[i][3];
+      if(nowMin>=openMin&&nowMin<closeMin){
+        isOpen=true;
+        var ch=ranges[i][2]%24;
+        closeAt=pad(ch)+':'+pad(ranges[i][3]);
+        break;
+      }
+    }
+
+    // Also check if we're in yesterday's overflow (e.g., Fri closes at 01:00 Sat)
+    if(!isOpen){
+      var yday=(day+6)%7;
+      var yranges=schedule[yday]||[];
+      for(var j=0;j<yranges.length;j++){
+        if(yranges[j][2]>24){
+          var overflowClose=(yranges[j][2]-24)*60+yranges[j][3];
+          if(nowMin<overflowClose){
+            isOpen=true;
+            closeAt=pad(yranges[j][2]-24)+':'+pad(yranges[j][3]);
+            break;
+          }
+        }
+      }
+    }
+
+    if(isOpen){
+      badge.className='status-badge open';
+      badge.textContent='Şu an açık · '+closeAt+"'"+( closeAt.endsWith('0')?'da':'de' )+' kapanıyor';
+    }else{
+      // Find next opening
+      for(var look=0;look<7;look++){
+        var checkDay=(day+look)%7;
+        var checkRanges=schedule[checkDay]||[];
+        for(var k=0;k<checkRanges.length;k++){
+          var oMin=checkRanges[k][0]*60+checkRanges[k][1];
+          if(look===0&&oMin>nowMin){
+            badge.className='status-badge closed';
+            badge.textContent='Şu an kapalı · bugün '+pad(checkRanges[k][0])+':'+pad(checkRanges[k][1])+"'"+( checkRanges[k][1]===0?'da':'de' )+' açılıyor';
+            return;
+          }else if(look>0){
+            var label=look===1?'yarın':dayNames[checkDay];
+            badge.className='status-badge closed';
+            badge.textContent='Şu an kapalı · '+label+' '+pad(checkRanges[k][0])+':'+pad(checkRanges[k][1])+"'"+( checkRanges[k][1]===0?'da':'de' )+' açılıyor';
+            return;
+          }
+        }
+      }
+      badge.className='status-badge closed';
+      badge.textContent='Şu an kapalı';
+    }
+  }
+
+  update();
+  setInterval(update,60000);
+})();
+</script>
+
+</body>
+</html>
