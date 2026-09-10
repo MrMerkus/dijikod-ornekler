@@ -5,9 +5,10 @@ Klasör: `kuafor/` · Dosya: `kuafor/index.html`
 
 ## İşletme
 
-Kurgusal. **Atelier Vera** — Nişantaşı'nda üst segment saç ve renk stüdyosu. Altı koltuk,
-randevuyla çalışır, kapıdan müşteri almaz. Kurucu Vera Demirtaş, on beş yıl Londra'da
-çalışmış, uzmanlığı **renk** — özellikle balyaj ve doğal ton geçişleri. Ekipte üç stilist.
+Kurgusal. **Atelier Vera** — Nişantaşı'nda saç, renk ve makyaj stüdyosu. Altı koltuk,
+randevuyla çalışır. Kurucu Vera Demirtaş, on beş yıl Londra'da çalışmış, uzmanlığı
+**renk** — özellikle balyaj ve doğal ton geçişleri. Saçın yanında gelin ve özel gün
+makyajı da yapılıyor.
 
 **Anlatının merkezi:** sakinlik ve ustalık. Bu bir "güzellik salonu" değil, bir atölye.
 Aceleye getirilmez, randevu bir seans sürer, fiyat da ona göredir. Site bunu özür dilemeden
@@ -44,30 +45,40 @@ dikey akışına ve kafenin ızgarasına hiç benzemez. Sayfa ikiye bölünmüş
 
 ## Bölümler
 
-1. **Hero** — tam ekran değil, `78svh`. Sol yarıda metin, sağ yarıda tek dikey fotoğraf
-   (kenara kadar taşan, üstten alta tam yükseklik). Mobilde alt alta.
-   Üstte çok ince nav: Hizmetler · Ekip · İletişim + "Randevu" butonu.
+1. **Hero** — tam ekran değil, `78svh`. **Solda metin, sağda `hero.jpg` (14:9 yatay,
+   stüdyonun geniş iç mekânı)** — kenara kadar taşar, tam yükseklik doldurur (`object-fit:
+   cover`). Mobilde alt alta. Üstte çok ince nav: Hizmetler · Stüdyo · İletişim +
+   "Randevu" butonu.
    H1: **"rengin ustalığı"** — Syne, küçük harf, `--step-5`.
    Altında: "Nişantaşı'nda, altı koltuklu bir renk atölyesi. Randevuyla çalışıyoruz."
    Tek birincil buton: "Randevu Al" (WhatsApp). Yanında ince metin bağlantı: "Fiyatları gör ↓"
 
 2. **Manifesto** — tam genişlik, ortalanmış, çok boşluklu. Üç kısa cümle, `--step-3`:
    aceleye getirmemek, saçın geçmişini okumak, doğal görünen renk. Aralarında bolca boşluk.
-   Bu bölümde fotoğraf yok — kasıtlı bir sessizlik.
+   **Cümlelerin arasına `cizim-1.jpg`** (elle çizilmiş fön makinesi ve tarak illüstrasyonu,
+   beyaz zeminli) küçük ve sessiz yerleşir — maksimum 180px genişlik, `mix-blend-mode:
+   multiply` ile zemine oturur. Fotoğraf değil, işaret gibi durur.
 
 3. **Hizmetler ve fiyatlar** — sitenin kalbi, yapışkan bölünmüş düzen.
    Sol (yapışkan): hizmet başlığı + iki cümle açıklama + "Süre: ~3 saat" bilgisi.
    Sağ (kayan): o hizmetin fotoğrafı ve fiyat satırı.
-   Dört hizmet: **Balyaj · Renk Yenileme · Kesim ve Şekillendirme · Bakım ve Onarım**.
-   Fiyatlar "₺4.500'den başlar" biçiminde, saç uzunluğuna göre değiştiği notuyla.
+   **Dört hizmet ve fotoğrafları:**
+   - **Renk ve Balyaj** → `hizmet-sac.jpg` (4:5). "₺4.500'den başlar"
+   - **Kesim ve Şekillendirme** → `mekan-1.jpg` (4:3). "₺1.200'den başlar"
+   - **Makyaj** (gelin ve özel gün) → `hizmet-makyaj.jpg` (4:5). "₺2.800'den başlar"
+   - **Bakım ve Onarım** → `anlati.jpg` (3:4). "₺1.900'den başlar"
    Altında küçük not: "Kesin fiyat, ilk görüşmede saçınız görüldükten sonra verilir."
 
-4. **Önce / sonra** — dört çift fotoğraf. Kaydırıcı (slider) yapma, JS ağırlaşır: yan yana
-   iki fotoğraf, üzerlerinde ince "önce" / "sonra" etiketi. Üzerine gelince sonra fotoğrafı
-   hafif büyür. Altında müşterinin tek cümlelik yorumu ve adı ("Elif K.").
+4. **Stüdyo** — önce/sonra bölümünün yerine geçer. Üç fotoğraflı asimetrik galeri:
+   `mekan-2.jpg` (4:3) büyük solda, `mekan-1.jpg` (4:3) ve `hero.jpg` sağda küçük.
+   Üzerine gelince diğerleri hafif sönümlenir (`opacity:.4`), üzerine gelinen netleşir.
+   Yanında iki cümle: altı koltuk, randevu arası temizlik, kapıdan müşteri alınmaması.
+   **Önce/sonra fotoğrafı ve stilist portresi yok** — o bölümler kaldırıldı, uydurma
+   fotoğrafla doldurulmaz.
 
-5. **Ekip** — üç kişi. Fotoğraf (3:4), ad, uzmanlık, tek cümle. Kart değil: fotoğrafın altında
-   sadece metin, çerçeve yok.
+5. **Müşteri sözleri** — ekip bölümünün yerine. Fotoğrafsız, üç kısa alıntı, ince çizgiyle
+   ayrılmış, her birinin altında ad ve hizmet ("Elif K. · Balyaj"). Bu bölümde `cizim-2.jpg`
+   (kuaför illüstrasyonu) sağ üstte küçük ve soluk (opacity .5, maks 140px) durur.
 
 6. **Bilgi** — iki sütun. Solda adres (Teşvikiye Mah. Vali Konağı Cad. No:87, Şişli/İstanbul),
    saatler tablosu, "şu an açık/kapalı" rozeti. Sağda harita tutucusu + "Yol Tarifi Al".
@@ -78,19 +89,21 @@ dikey akışına ve kafenin ızgarasına hiç benzemez. Sayfa ikiye bölünmüş
 
 8. **Footer** — ince, tek satır.
 
-**Saatler:** Salı–Cumartesi 10:00–19:00 · Pazar–Pazartesi kapalı. (Pazartesi kapalı olması
-gerçekçi ve karakter katıyor.)
+**Saatler:** Salı–Cumartesi 10:00–19:00 · Pazar–Pazartesi kapalı.
 
 ## Fotoğraf sözleşmesi (`kuafor/gorseller/OKU.md`)
 
+Fotoğraflar **klasörde mevcut**. Kod bu adları ve oranları kullanır; dosya silinirse
+sayfa bozulmaz, tutucu görünür.
+
 | Dosya | Oran | Ne |
 | --- | --- | --- |
-| `hero.jpg` | 3:4 | Stüdyo içi veya saç detayı, doğal ışık, sakin |
-| `hizmet-balyaj.jpg` | 4:5 | Balyaj sonucu, arkadan çekim |
-| `hizmet-renk.jpg` | 4:5 | Renk uygulaması sırasında |
-| `hizmet-kesim.jpg` | 4:5 | Kesim sonrası, portre |
-| `hizmet-bakim.jpg` | 4:5 | Bakım uygulaması, detay |
-| `once-1.jpg` … `once-4.jpg` | 3:4 | Önce fotoğrafları |
-| `sonra-1.jpg` … `sonra-4.jpg` | 3:4 | Sonra fotoğrafları |
-| `ekip-1.jpg` … `ekip-3.jpg` | 3:4 | Stilist portreleri |
+| `hero.jpg` | 14:9 (1400×900) | Stüdyonun geniş iç mekânı, açık renk, kemerli aynalar |
+| `mekan-1.jpg` | 4:3 (1200×900) | Salon çalışırken, koltuklar dolu |
+| `mekan-2.jpg` | 4:3 (1200×900) | Ahşap ve sıcak ışıklı bölüm, aynalar |
+| `hizmet-sac.jpg` | 4:5 (900×1125) | Fön ve şekillendirme, stilist çalışırken |
+| `hizmet-makyaj.jpg` | 4:5 (900×1125) | Makyaj paleti ve fırçalar, detay |
+| `anlati.jpg` | 3:4 (900×1200) | Makas, tarak ve alet detayı |
+| `cizim-1.jpg` | ~3:4 (700×933) | Fön makinesi illüstrasyonu, beyaz zemin |
+| `cizim-2.jpg` | 1:1 (700×700) | Kuaför illüstrasyonu, beyaz zemin |
 | `og.jpg` | 1200×630 | Paylaşım görseli |
