@@ -5,7 +5,9 @@ adım** ne. Biten satır silinmez, `backlog-log.md`'ye taşınır.
 
 ## Açık
 
-- **Rezervuar tamiri sitesi** — Baran ilk müşterinin mevcut kaynak kodunu gönderecek.
-  Sıradaki adım: kod gelince incele, mevcut işi aşan bir sürüm yaz.
-- **Fotoğraflar** — üç sitenin `gorseller/` klasörleri boş, tutucu bloklarla çalışıyor.
-  Sıradaki adım: Baran fotoğraf klasörünü verince `OKU.md` sözleşmesine göre yerleştir.
+- **Rezervuar tamiri sitesi** — müşterinin kaynak kodu geldi, denetlendi ve kritik hatalar
+  düzeltildi (rapor: `reports/2026-09-10-denetim-musteri-rezervuar-sitesi.md`).
+  Sıradaki adım: Baran'dan GA4 ölçüm kimliği (`G-…`) gelirse gtag bloğuna ikinci `config`
+  satırı eklenir; ayrıca Ads dönüşüm etiketinin hesapta doğruluğu Baran tarafından teyit
+  edilecek. "Mevcut işi aşan bir sürüm yaz" maddesi hâlâ açık — şu an yapılan düzeltmeydi,
+  yeniden yazım değil.
