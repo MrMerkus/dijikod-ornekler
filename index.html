@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DijiKod — Örnek İşler</title>
+<meta name="description" content="DijiKod'un örnek web siteleri: restoran, kuaför ve kahveci için hazırlanmış gezilebilir demolar.">
+<meta property="og:title" content="DijiKod — Örnek İşler">
+<meta property="og:description" content="Gezilebilir örnek web siteleri.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230A0A0B'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='16' fill='%233B82F6' text-anchor='middle'%3E%26lt;%26gt;%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0A0A0B; --surface:#141417; --line:rgba(255,255,255,.09);
+  --text:#F4F4F5; --muted:#8B8B93;
+  --mavi:#3B82F6; --mor:#A855F7;
+}
+body{
+  background:var(--bg); color:var(--text);
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+  line-height:1.6; -webkit-font-smoothing:antialiased;
+  padding:clamp(1.5rem,5vw,4rem) clamp(1.25rem,5vw,2rem);
+  min-height:100svh;
+}
+.wrap{max-width:64rem;margin:0 auto}
+header{margin-bottom:clamp(2.5rem,7vw,4.5rem)}
+.logo{
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:.8125rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:1.75rem;display:block;
+}
+h1{
+  font-size:clamp(2rem,6.5vw,3.25rem);line-height:1.1;
+  letter-spacing:-.03em;font-weight:600;text-wrap:balance;margin-bottom:1rem;
+}
+h1 em{
+  font-style:normal;
+  background:linear-gradient(100deg,var(--mavi),var(--mor));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.lede{color:var(--muted);max-width:34rem;text-wrap:pretty}
+.grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr))}
+.kart{
+  display:flex;flex-direction:column;
+  background:var(--surface);border:1px solid var(--line);border-radius:18px;
+  padding:1.5rem;text-decoration:none;color:inherit;
+  transition:border-color .3s ease,transform .3s ease,background .3s ease;
+}
+.kart:hover,.kart:focus-visible{
+  border-color:color-mix(in oklch,var(--mavi) 55%,transparent);
+  background:#17171B;transform:translateY(-3px);
+}
+.kart:focus-visible{outline:2px solid var(--mor);outline-offset:3px}
+.sirit{height:5px;border-radius:99px;width:2.75rem;margin-bottom:1.25rem}
+.k1 .sirit{background:linear-gradient(90deg,#E0562A,#7A2E2E)}
+.k2 .sirit{background:linear-gradient(90deg,#B9A48C,#2B2724)}
+.k3 .sirit{background:linear-gradient(90deg,#FF6B35,#14342B)}
+.kart h2{font-size:1.1875rem;font-weight:600;letter-spacing:-.01em;margin-bottom:.25rem}
+.tur{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.875rem}
+.kart p{font-size:.9375rem;color:var(--muted);flex:1;text-wrap:pretty}
+.git{margin-top:1.25rem;font-size:.875rem;font-weight:500;color:var(--mavi)}
+.not{
+  margin-top:clamp(2.5rem,7vw,4rem);padding-top:1.5rem;border-top:1px solid var(--line);
+  font-size:.875rem;color:var(--muted);text-wrap:pretty;max-width:44rem;
+}
+footer{margin-top:2rem;font-size:.8125rem;color:#5C5C64}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <span class="logo">&lt; DijiKod /&gt;</span>
+    <h1>Örnek işler.<br><em>Gezilebilir demolar.</em></h1>
+    <p class="lede">Aşağıdaki siteler DijiKod tarafından hazırlanmış örneklerdir. İşletmeler
+    kurgusaldır; amaç, gerçek bir iş için nasıl bir site kurduğumuzu göstermektir.</p>
+  </header>
+
+  <main class="grid">
+    <a class="kart k1" href="restoran/">
+      <span class="sirit"></span>
+      <h2>Ocakbaşı Nar</h2>
+      <p class="tur">Restoran</p>
+      <p>Beyoğlu'nda bir ocakbaşı. Koyu ve dergi düzeninde: menü kart yığını değil, gerçek
+      bir menü kartı gibi okunuyor.</p>
+      <span class="git">Siteyi gez →</span>
+    </a>
+
+    <a class="kart k2" href="kuafor/">
+      <span class="sirit"></span>
+      <h2>Atelier Vera</h2>
+      <p class="tur">Kuaför &amp; renk atölyesi</p>
+      <p>Nişantaşı'nda üst segment bir salon. Sakin, bol boşluklu, ikiye bölünmüş düzen —
+      lüksü süsle değil boşlukla anlatıyor.</p>
+      <span class="git">Siteyi gez →</span>
+    </a>
+
+    <a class="kart k3" href="kafe/">
+      <span class="sirit"></span>
+      <h2>Demlik Kahve</h2>
+      <p class="tur">Kahveci</p>
+      <p>Moda'da üçüncü dalga bir kahveci. Renkli, yüksek sesli, dev tipografi ve kayan
+      şeritle — ama ızgarası disiplinli.</p>
+      <span class="git">Siteyi gez →</span>
+    </a>
+  </main>
+
+  <p class="not"><strong>Not:</strong> Bu demolarda fotoğraflar henüz yerleştirilmedi;
+  görsellerin yerinde markanın renklerinde tutucu bloklar duruyor. Telefon numaraları da yer
+  tutucudur. Yapı, tipografi, düzen ve mobil davranış gerçek teslim edilecek haliyle çalışır.</p>
+
+  <footer>DijiKod · Dijital çözümler, akıllı kod.</footer>
+</div>
+</body>
+</html>
