@@ -1298,5 +1298,17 @@ body::after{
 })();
 </script>
 
+<script>
+/* Fotoğraflar henüz gorseller/ klasörüne konmadığı için tarayıcı kırık görsel ikonunu ve
+   alt metnini çiziyor. Bu kod yalnızca yüklenemeyen görseli gizler; arkadaki tutucu blok
+   görünür kalır. Gerçek fotoğraflar geldiğinde hiç devreye girmez, silmeye gerek yok. */
+(function(){
+  function gizle(i){ i.style.visibility='hidden'; }
+  document.querySelectorAll('img').forEach(function(i){
+    i.addEventListener('error', function(){ gizle(i); });
+    if (i.complete && i.naturalWidth === 0) gizle(i);
+  });
+})();
+</script>
 </body>
 </html>
