@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atelier Vera — Nişantaşı Saç ve Renk Stüdyosu</title>
+<meta name="description" content="Nişantaşı'nda altı koltuklu bir renk atölyesi. Balyaj, renk, kesim ve bakım — randevuyla çalışıyoruz.">
+<meta property="og:title" content="Atelier Vera — Saç ve Renk Stüdyosu">
+<meta property="og:description" content="Nişantaşı'nda altı koltuklu bir renk atölyesi. Randevuyla çalışıyoruz.">
+<meta property="og:image" content="gorseller/og.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26' font-family='serif' fill='%232B2724'>V</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500&family=Syne:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HairSalon",
+  "name": "Atelier Vera",
+  "description": "Nişantaşı'nda altı koltuklu bir saç ve renk stüdyosu.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Teşvikiye Mah. Vali Konağı Cad. No:87",
+    "addressLocality": "Şişli",
+    "addressRegion": "İstanbul",
+    "addressCountry": "TR"
+  },
+  "telephone": "+90212XXXXXXX",
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "10:00", "closes": "19:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Sunday","Monday"], "opens": "00:00", "closes": "00:00" }
+  ]
+}
+</script>
+<style>
+/* ── RESET ── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+ul,ol{list-style:none}
+
+/* ── TOKENS ── */
+:root{
+  --bg:#F7F4F0;
+  --surface:#FFFFFF;
+  --text:#2B2724;
+  --text-2:#8A8078;
+  --accent:#B9A48C;
+  --dark:#2B2724;
+  --rule:#E4DED6;
+
+  --step--1:clamp(.875rem,.85rem + .12vw,.9375rem);
+  --step-0:clamp(1rem,.96rem + .22vw,1.125rem);
+  --step-1:clamp(1.25rem,1.16rem + .43vw,1.5rem);
+  --step-2:clamp(1.56rem,1.41rem + .76vw,2rem);
+  --step-3:clamp(1.95rem,1.71rem + 1.24vw,2.66rem);
+  --step-4:clamp(2.44rem,2.05rem + 1.93vw,3.55rem);
+  --step-5:clamp(3.05rem,2.46rem + 2.95vw,4.74rem);
+
+  --ease-out:cubic-bezier(.16,1,.3,1);
+  --font-heading:'Syne',sans-serif;
+  --font-body:'Outfit',sans-serif;
+}
+
+/* ── BASE ── */
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--font-body);
+  font-size:var(--step-0);
+  font-weight:300;
+  line-height:1.6;
+  color:var(--text);
+  background:var(--bg);
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4,h5,h6{
+  font-family:var(--font-heading);
+  font-weight:500;
+  letter-spacing:.01em;
+  line-height:1.15;
+  text-wrap:balance;
+}
+p{text-wrap:pretty}
+
+::selection{background:var(--accent);color:var(--surface)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+
+/* ── UTILITY ── */
+.wrap{
+  width:min(90rem,100% - 3rem);
+  margin-inline:auto;
+}
+@media(min-width:768px){
+  .wrap{width:min(90rem,100% - 6rem)}
+}
+.rule{border:none;border-top:1px solid var(--rule);margin:0}
+
+/* ── NAV ── */
+.site-nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(247,244,240,.82);
+  -webkit-backdrop-filter:blur(16px);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--rule);
+}
+.site-nav .wrap{
+  display:flex;align-items:center;justify-content:space-between;
+  height:3.5rem;
+}
+.nav-logo{
+  font-family:var(--font-heading);font-weight:600;font-size:var(--step-1);
+  letter-spacing:.02em;
+}
+.nav-links{display:flex;align-items:center;gap:1.75rem}
+.nav-links a{
+  font-size:var(--step--1);font-weight:400;letter-spacing:.01em;
+  color:var(--text-2);transition:color .3s;
+}
+.nav-links a:hover{color:var(--text)}
+.nav-cta{
+  display:inline-flex;align-items:center;
+  padding:.5rem 1.25rem;
+  background:var(--dark);color:var(--surface);
+  border-radius:999px;
+  font-size:var(--step--1);font-weight:400;
+  transition:background .3s;
+}
+.nav-cta:hover{background:var(--accent)}
+
+/* mobile nav */
+.nav-toggle{display:none;width:44px;height:44px;align-items:center;justify-content:center}
+.nav-toggle svg{width:22px;height:22px}
+
+@media(max-width:767px){
+  .nav-links{
+    display:none;
+    position:absolute;top:3.5rem;left:0;right:0;
+    flex-direction:column;gap:0;
+    background:rgba(247,244,240,.96);
+    -webkit-backdrop-filter:blur(16px);
+    backdrop-filter:blur(16px);
+    border-bottom:1px solid var(--rule);
+    padding:1rem 0;
+  }
+  .nav-links.open{display:flex}
+  .nav-links a,.nav-links .nav-cta{
+    display:block;padding:.75rem 1.5rem;width:100%;text-align:left;
+  }
+  .nav-toggle{display:inline-flex}
+}
+
+/* ── HERO ── */
+.hero{
+  min-height:78svh;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  padding-top:3.5rem;/* nav height */
+}
+.hero-text{
+  padding:4rem 2rem 4rem;
+  display:flex;flex-direction:column;gap:1.5rem;
+  justify-content:center;
+}
+.hero h1{
+  font-size:var(--step-5);font-weight:600;
+  line-height:1.05;
+}
+.hero-sub{font-size:var(--step-0);color:var(--text-2);max-width:32ch}
+.hero-actions{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;margin-top:.5rem}
+.btn-primary{
+  display:inline-flex;align-items:center;gap:.5rem;
+  padding:.875rem 2rem;
+  background:var(--dark);color:var(--surface);
+  border-radius:999px;
+  font-family:var(--font-body);font-size:var(--step-0);font-weight:400;
+  transition:background .3s;
+}
+.btn-primary:hover{background:var(--accent)}
+.link-subtle{
+  font-size:var(--step--1);color:var(--text-2);
+  border-bottom:1px solid var(--rule);
+  padding-bottom:2px;
+  transition:color .3s,border-color .3s;
+}
+.link-subtle:hover{color:var(--text);border-color:var(--accent)}
+
+.hero-img-wrap{
+  position:relative;
+  height:78svh;
+  overflow:hidden;
+}
+.hero-img-wrap .img-holder{
+  width:100%;height:100%;
+  object-fit:cover;
+}
+
+@media(max-width:767px){
+  .hero{
+    grid-template-columns:1fr;
+    min-height:auto;
+  }
+  .hero-text{padding:6rem 1.5rem 2.5rem}
+  .hero-img-wrap{height:60svh}
+}
+
+/* ── IMAGE HOLDER (placeholder) ── */
+.img-holder{
+  width:100%;
+  background:linear-gradient(145deg,var(--rule),var(--accent));
+  display:flex;align-items:center;justify-content:center;
+  color:var(--text-2);font-size:var(--step--1);
+  font-style:italic;letter-spacing:.01em;
+  overflow:hidden;position:relative;
+}
+.img-holder img{
+  position:absolute;inset:0;
+  width:100%;height:100%;
+  object-fit:cover;
+}
+
+/* ── MANIFESTO ── */
+.manifesto{
+  padding:6rem 0;
+  text-align:center;
+}
+.manifesto-inner{
+  max-width:48ch;
+  margin-inline:auto;
+  display:flex;flex-direction:column;
+  gap:2.5rem;
+}
+.manifesto-line{
+  font-family:var(--font-heading);
+  font-size:var(--step-3);
+  font-weight:400;
+  line-height:1.3;
+  color:var(--text);
+}
+
+/* ── SERVICES — sticky split ── */
+.services{padding:2rem 0 0}
+.services-heading{
+  text-align:center;
+  padding:3rem 0;
+}
+.services-heading h2{font-size:var(--step-3);margin-bottom:.75rem}
+.services-heading p{color:var(--text-2);font-size:var(--step--1)}
+
+.service-item{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  border-top:1px solid var(--rule);
+}
+.service-item:last-child{border-bottom:1px solid var(--rule)}
+
+.service-sticky{
+  position:sticky;
+  top:4.5rem;/* nav + offset */
+  align-self:start;
+  padding:3rem 2rem 3rem 0;
+  display:flex;flex-direction:column;gap:1rem;
+}
+.service-sticky h3{font-size:var(--step-2)}
+.service-sticky p{color:var(--text-2);max-width:34ch}
+.service-meta{
+  font-size:var(--step--1);
+  color:var(--accent);
+  display:flex;align-items:center;gap:.5rem;
+}
+.service-meta svg{width:16px;height:16px;stroke:var(--accent);fill:none;stroke-width:1.5}
+
+.service-scroll{
+  padding:3rem 0 3rem 2rem;
+  display:flex;flex-direction:column;gap:1.5rem;
+  border-left:1px solid var(--rule);
+}
+.service-scroll .img-holder{
+  aspect-ratio:4/5;
+  border-radius:0;
+}
+.service-price{
+  font-family:var(--font-heading);
+  font-size:var(--step-1);
+  font-weight:500;
+}
+.service-price-note{
+  font-size:var(--step--1);color:var(--text-2);
+}
+
+@media(max-width:767px){
+  .service-item{grid-template-columns:1fr}
+  .service-sticky{
+    position:relative;top:auto;
+    padding:2rem 0 1rem;
+  }
+  .service-scroll{
+    border-left:none;
+    padding:0 0 2rem;
+  }
+}
+.services-footnote{
+  text-align:center;
+  padding:2rem 0 4rem;
+  font-size:var(--step--1);
+  color:var(--text-2);
+  font-style:italic;
+}
+
+/* ── BEFORE / AFTER ── */
+.before-after{padding:4rem 0}
+.before-after h2{
+  font-size:var(--step-3);
+  text-align:center;
+  margin-bottom:3rem;
+}
+.ba-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:3rem;
+}
+.ba-pair{display:flex;flex-direction:column;gap:1rem}
+.ba-images{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:.75rem;
+}
+.ba-images figure{position:relative}
+.ba-images .img-holder{
+  aspect-ratio:3/4;
+  border-radius:0;
+}
+.ba-images figcaption{
+  position:absolute;bottom:.75rem;left:.75rem;
+  font-size:.75rem;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:var(--surface);
+  background:rgba(43,39,36,.55);
+  padding:.25rem .625rem;
+  border-radius:999px;
+  -webkit-backdrop-filter:blur(4px);
+  backdrop-filter:blur(4px);
+}
+.ba-images figure:last-child .img-holder{
+  transition:transform .6s var(--ease-out);
+}
+.ba-pair:hover .ba-images figure:last-child .img-holder{
+  transform:scale(1.03);
+}
+.ba-quote{
+  font-size:var(--step--1);
+  color:var(--text-2);
+  font-style:italic;
+  padding-left:1rem;
+  border-left:2px solid var(--accent);
+}
+.ba-quote cite{
+  display:block;
+  font-style:normal;
+  margin-top:.35rem;
+  font-weight:400;
+  color:var(--text);
+}
+
+@media(max-width:767px){
+  .ba-grid{grid-template-columns:1fr;gap:2.5rem}
+}
+
+/* ── TEAM ── */
+.team{padding:4rem 0}
+.team h2{
+  font-size:var(--step-3);
+  text-align:center;
+  margin-bottom:3rem;
+}
+.team-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:2rem;
+}
+.team-member .img-holder{
+  aspect-ratio:3/4;
+  margin-bottom:1.25rem;
+}
+.team-member h3{
+  font-size:var(--step-1);margin-bottom:.25rem;
+}
+.team-member .team-role{
+  font-size:var(--step--1);
+  color:var(--accent);
+  margin-bottom:.5rem;
+}
+.team-member p:last-child{
+  font-size:var(--step--1);color:var(--text-2);
+}
+
+@media(max-width:767px){
+  .team-grid{grid-template-columns:1fr;max-width:24rem;margin-inline:auto}
+}
+
+/* ── INFO ── */
+.info{padding:4rem 0}
+.info-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:3rem;
+  align-items:start;
+}
+.info h2{font-size:var(--step-2);margin-bottom:1.5rem}
+.info-address{color:var(--text-2);margin-bottom:1.5rem;line-height:1.7}
+.hours-table{width:100%;border-collapse:collapse;margin-bottom:1rem}
+.hours-table td{
+  padding:.5rem 0;
+  border-bottom:1px solid var(--rule);
+  font-size:var(--step--1);
+}
+.hours-table td:last-child{text-align:right;color:var(--text-2)}
+.hours-table tr.closed td{color:var(--text-2)}
+.status-badge{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-size:var(--step--1);
+  padding:.5rem 1rem;
+  border-radius:999px;
+  border:1px solid var(--rule);
+  margin-bottom:1.5rem;
+}
+.status-dot{
+  width:8px;height:8px;border-radius:50%;
+}
+.status-dot.open{background:#5a9a5a}
+.status-dot.closed{background:var(--text-2)}
+
+.info-right{display:flex;flex-direction:column;gap:1.5rem}
+.map-holder{
+  aspect-ratio:16/9;
+  background:var(--rule);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--text-2);font-size:var(--step--1);font-style:italic;
+  border:1px solid var(--rule);
+}
+.btn-outline{
+  display:inline-flex;align-items:center;gap:.5rem;
+  padding:.75rem 1.5rem;
+  border:1px solid var(--dark);
+  border-radius:999px;
+  font-size:var(--step--1);font-weight:400;
+  transition:background .3s,color .3s;
+  align-self:flex-start;
+}
+.btn-outline:hover{background:var(--dark);color:var(--surface)}
+.btn-outline svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.5}
+.info-policy{
+  font-size:var(--step--1);color:var(--text-2);
+  border-top:1px solid var(--rule);
+  padding-top:1rem;
+}
+
+@media(max-width:767px){
+  .info-grid{grid-template-columns:1fr}
+}
+
+/* ── CLOSING CTA ── */
+.closing{
+  background:var(--dark);
+  color:var(--surface);
+  padding:5rem 0;
+  text-align:center;
+}
+.closing h2{
+  font-size:var(--step-4);
+  margin-bottom:1.5rem;
+}
+.closing-actions{
+  display:flex;align-items:center;justify-content:center;
+  gap:1.5rem;flex-wrap:wrap;
+  margin-top:1.5rem;
+}
+.btn-light{
+  display:inline-flex;align-items:center;gap:.5rem;
+  padding:.875rem 2rem;
+  background:var(--surface);color:var(--dark);
+  border-radius:999px;
+  font-size:var(--step-0);font-weight:400;
+  transition:background .3s;
+}
+.btn-light:hover{background:var(--accent);color:var(--surface)}
+.closing-phone{
+  font-size:var(--step--1);color:var(--accent);
+  border-bottom:1px solid rgba(185,164,140,.3);
+  padding-bottom:2px;
+}
+.closing-phone:hover{border-color:var(--accent)}
+
+/* ── FOOTER ── */
+.site-footer{
+  border-top:1px solid var(--rule);
+  padding:1.5rem 0;
+}
+.site-footer .wrap{
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:.75rem;
+  font-size:var(--step--1);
+  color:var(--text-2);
+}
+.footer-social{display:flex;gap:1rem}
+.footer-social a svg{width:18px;height:18px;stroke:var(--text-2);fill:none;stroke-width:1.5;transition:stroke .3s}
+.footer-social a:hover svg{stroke:var(--text)}
+
+/* ── WHATSAPP FAB ── */
+.wa-fab{
+  position:fixed;bottom:1.75rem;right:1.75rem;z-index:90;
+  display:flex;align-items:center;gap:.75rem;
+  background:var(--dark);color:var(--surface);
+  border-radius:999px;
+  padding:.875rem;
+  transition:padding .35s var(--ease-out),background .3s;
+  box-shadow:none;
+  text-decoration:none;
+}
+.wa-fab svg{width:24px;height:24px;fill:var(--surface);flex-shrink:0}
+.wa-fab-text{
+  max-width:0;overflow:hidden;white-space:nowrap;
+  font-size:var(--step--1);font-weight:400;
+  transition:max-width .35s var(--ease-out),opacity .25s;
+  opacity:0;
+}
+.wa-fab:hover{padding:.875rem 1.25rem .875rem .875rem;background:var(--accent)}
+.wa-fab:hover .wa-fab-text{max-width:12rem;opacity:1}
+
+@media(max-width:767px){
+  .wa-fab{bottom:5rem;right:1rem}
+}
+
+/* ── MOBILE BOTTOM BAR ── */
+.mobile-bar{
+  display:none;
+  position:fixed;bottom:0;left:0;right:0;z-index:100;
+  background:rgba(247,244,240,.8);
+  -webkit-backdrop-filter:blur(16px);
+  backdrop-filter:blur(16px);
+  border-top:1px solid var(--rule);
+  padding:.5rem .75rem calc(.5rem + env(safe-area-inset-bottom));
+}
+@media(max-width:768px){
+  .mobile-bar{display:grid;grid-template-columns:1fr 1fr;gap:.5rem}
+  body{padding-bottom:4.5rem}
+}
+.mobile-bar a{
+  display:flex;align-items:center;justify-content:center;gap:.5rem;
+  padding:.75rem;
+  border-radius:999px;
+  font-size:var(--step--1);font-weight:400;
+  min-height:48px;
+  transition:background .3s;
+}
+.mobile-bar .mb-call{background:var(--dark);color:var(--surface)}
+.mobile-bar .mb-call:hover{background:var(--accent)}
+.mobile-bar .mb-dir{border:1px solid var(--dark);color:var(--text)}
+.mobile-bar .mb-dir:hover{background:var(--dark);color:var(--surface)}
+.mobile-bar svg{width:18px;height:18px;flex-shrink:0}
+.mobile-bar .mb-call svg{stroke:var(--surface);fill:none;stroke-width:1.5}
+.mobile-bar .mb-dir svg{stroke:currentColor;fill:none;stroke-width:1.5}
+
+/* ── REVEAL ANIMATION ── */
+.reveal{
+  opacity:1;/* safe default */
+}
+@supports(animation-timeline:view()){
+  .reveal{
+    animation:reveal-up linear both;
+    animation-timeline:view();
+    animation-range:entry 0% entry 25%;
+  }
+  @keyframes reveal-up{
+    from{opacity:0;transform:translateY(24px)}
+    to{opacity:1;transform:translateY(0)}
+  }
+}
+/* IO fallback class toggled by JS */
+.reveal--hidden{opacity:0;transform:translateY(24px)}
+.reveal--visible{
+  opacity:1;transform:translateY(0);
+  transition:opacity .7s var(--ease-out),transform .7s var(--ease-out);
+}
+
+@media(prefers-reduced-motion:reduce){
+  .reveal,.reveal--hidden,.reveal--visible{
+    opacity:1!important;transform:none!important;
+    animation:none!important;transition:none!important;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- ═════════ NAV ═════════ -->
+<nav class="site-nav" aria-label="Ana menü">
+  <div class="wrap">
+    <a href="#" class="nav-logo" aria-label="Atelier Vera ana sayfa">Atelier Vera</a>
+    <button class="nav-toggle" aria-label="Menüyü aç" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+    </button>
+    <div class="nav-links">
+      <a href="#hizmetler">Hizmetler</a>
+      <a href="#ekip">Ekip</a>
+      <a href="#iletisim">İletişim</a>
+      <a href="https://wa.me/905XXXXXXXXX?text=Merhaba%2C%20randevu%20almak%20istiyorum." class="nav-cta" target="_blank" rel="noopener">Randevu</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ═════════ HERO ═════════ -->
+<section class="hero">
+  <div class="hero-text">
+    <h1>rengin ustalığı</h1>
+    <p class="hero-sub">Nişantaşı'nda, altı koltuklu bir renk atölyesi. Randevuyla çalışıyoruz.</p>
+    <div class="hero-actions">
+      <a href="https://wa.me/905XXXXXXXXX?text=Merhaba%2C%20randevu%20almak%20istiyorum." class="btn-primary" target="_blank" rel="noopener">Randevu Al</a>
+      <a href="#hizmetler" class="link-subtle">Fiyatları gör ↓</a>
+    </div>
+  </div>
+  <div class="hero-img-wrap">
+    <div class="img-holder" style="aspect-ratio:3/4" aria-hidden="true">
+      <span>Stüdyo — 3:4</span>
+      <img src="gorseller/hero.jpg" alt="Atelier Vera stüdyo iç mekânı, doğal ışık altında saç detayı" width="720" height="960">
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ MANIFESTO ═════════ -->
+<section class="manifesto reveal" aria-label="Felsefe">
+  <hr class="rule wrap">
+  <div class="manifesto-inner wrap" style="padding-top:4rem">
+    <p class="manifesto-line">Aceleye getirmiyoruz — her randevu bir seans.</p>
+    <p class="manifesto-line">Saçınızın geçmişini okuyoruz, sadece boyamıyoruz.</p>
+    <p class="manifesto-line">Doğal görünen renk, gösterişsiz ustalık.</p>
+  </div>
+</section>
+
+<!-- ═════════ SERVICES ═════════ -->
+<section id="hizmetler" class="services" aria-label="Hizmetler ve fiyatlar">
+  <hr class="rule wrap">
+  <div class="services-heading wrap">
+    <h2>Hizmetler</h2>
+    <p>Her seans, saçınızın ihtiyacına göre kişiselleştirilir.</p>
+  </div>
+
+  <div class="wrap">
+    <!-- Balyaj -->
+    <article class="service-item reveal">
+      <div class="service-sticky">
+        <h3>Balyaj</h3>
+        <p>Doğal ışık oyunlarını saçınıza taşıyoruz. Serbest el tekniğiyle, kök bağlantısı yumuşak, uçlara doğru açılan ton geçişleri. Her balyaj biriciktir — şablonumuz yok.</p>
+        <div class="service-meta">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span>Süre: ~3,5 saat</span>
+        </div>
+      </div>
+      <div class="service-scroll">
+        <div class="img-holder" style="aspect-ratio:4/5">
+          <span>Balyaj — 4:5</span>
+          <img src="gorseller/hizmet-balyaj.jpg" alt="Balyaj sonucu, arkadan doğal saç görünümü" loading="lazy" width="640" height="800">
+        </div>
+        <p class="service-price">₺4.500'den başlar</p>
+        <p class="service-price-note">Saç uzunluğu ve yoğunluğuna göre değişir.</p>
+      </div>
+    </article>
+
+    <!-- Renk Yenileme -->
+    <article class="service-item reveal">
+      <div class="service-sticky">
+        <h3>Renk Yenileme</h3>
+        <p>Mevcut renginizi canlandırıyoruz — dip boyama, tonlama veya parlaklık seansı. Wella ve Davines profesyonel serilerle çalışıyoruz; saç sağlığı her zaman öncelik.</p>
+        <div class="service-meta">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span>Süre: ~2 saat</span>
+        </div>
+      </div>
+      <div class="service-scroll">
+        <div class="img-holder" style="aspect-ratio:4/5">
+          <span>Renk — 4:5</span>
+          <img src="gorseller/hizmet-renk.jpg" alt="Renk uygulaması sırasında, stüdyo ortamı" loading="lazy" width="640" height="800">
+        </div>
+        <p class="service-price">₺2.800'den başlar</p>
+        <p class="service-price-note">Saç uzunluğu ve mevcut renge göre değişir.</p>
+      </div>
+    </article>
+
+    <!-- Kesim -->
+    <article class="service-item reveal">
+      <div class="service-sticky">
+        <h3>Kesim ve Şekillendirme</h3>
+        <p>Yüz hatlarınıza, saç dokusuna ve yaşam tarzınıza göre öneriyoruz. Kuru kesim tekniğiyle saçın doğal düşüşünü koruyoruz. Yıkama, kesim ve fönle tamamlanır.</p>
+        <div class="service-meta">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span>Süre: ~1,5 saat</span>
+        </div>
+      </div>
+      <div class="service-scroll">
+        <div class="img-holder" style="aspect-ratio:4/5">
+          <span>Kesim — 4:5</span>
+          <img src="gorseller/hizmet-kesim.jpg" alt="Kesim sonrası portre, doğal şekillendirme" loading="lazy" width="640" height="800">
+        </div>
+        <p class="service-price">₺1.800'den başlar</p>
+        <p class="service-price-note">Saç uzunluğuna göre değişir.</p>
+      </div>
+    </article>
+
+    <!-- Bakım -->
+    <article class="service-item reveal">
+      <div class="service-sticky">
+        <h3>Bakım ve Onarım</h3>
+        <p>Yıpranmış, kırılgan veya kimyasal işlem görmüş saçlar için derin onarım protokolümüz var. Keratin takviyesi, nem dengesi ve koruyucu bakım — saçınız tekrar nefes alsın.</p>
+        <div class="service-meta">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span>Süre: ~1,5 saat</span>
+        </div>
+      </div>
+      <div class="service-scroll">
+        <div class="img-holder" style="aspect-ratio:4/5">
+          <span>Bakım — 4:5</span>
+          <img src="gorseller/hizmet-bakim.jpg" alt="Saç bakım uygulaması, yakın çekim detay" loading="lazy" width="640" height="800">
+        </div>
+        <p class="service-price">₺1.200'den başlar</p>
+        <p class="service-price-note">İşlemin kapsamına göre değişir.</p>
+      </div>
+    </article>
+  </div>
+
+  <p class="services-footnote wrap">Kesin fiyat, ilk görüşmede saçınız görüldükten sonra verilir.</p>
+</section>
+
+<!-- ═════════ BEFORE / AFTER ═════════ -->
+<section class="before-after reveal" aria-label="Önce ve sonra">
+  <hr class="rule wrap">
+  <div class="wrap" style="padding-top:2rem">
+    <h2>Önce &amp; Sonra</h2>
+    <div class="ba-grid">
+
+      <div class="ba-pair">
+        <div class="ba-images">
+          <figure>
+            <div class="img-holder" style="aspect-ratio:3/4"><span>Önce — 3:4</span><img src="gorseller/once-1.jpg" alt="Müşteri saçı, işlem öncesi görünüm" loading="lazy" width="480" height="640"></div>
+            <figcaption>Önce</figcaption>
+          </figure>
+          <figure>
+            <div class="img-holder" style="aspect-ratio:3/4"><span>Sonra — 3:4</span><img src="gorseller/sonra-1.jpg" alt="Balyaj sonrası doğal ton geçişi" loading="lazy" width="480" height="640"></div>
+            <figcaption>Sonra</figcaption>
+          </figure>
+        </div>
+        <blockquote class="ba-quote">"İlk kez boyatmama rağmen kimse fark etmedi — o kadar doğal." <cite>— Elif K.</cite></blockquote>
+      </div>
+
+      <div class="ba-pair">
+        <div class="ba-images">
+          <figure>
+            <div class="img-holder" style="aspect-ratio:3/4"><span>Önce — 3:4</span><img src="gorseller/once-2.jpg" alt="Müşteri saçı, işlem öncesi" loading="lazy" width="480" height="640"></div>
+            <figcaption>Önce</figcaption>
+          </figure>
+          <figure>
+            <div class="img-holder" style="aspect-ratio:3/4"><span>Sonra — 3:4</span><img src="gorseller/sonra-2.jpg" alt="Renk yenileme sonrası parlak ve canlı saç" loading="lazy" width="480" height="640"></div>
+            <figcaption>Sonra</figcaption>
+          </figure>
+        </div>
+        <blockquote class="ba-quote">"Vera'ya gitmeden önce beş farklı kuaför denedim. Artık başka yere gitmiyorum." <cite>— Selin A.</cite></blockquote>
+      </div>
+
+      <div class="ba-pair">
+        <div class="ba-images">
+          <figure>
+            <div class="img-holder" style="aspect-ratio:3/4"><span>Önce — 3:4</span><img src="gorseller/once-3.jpg" alt="Yıpranmış saç, işlem öncesi" loading="lazy" width="480" height="640"></div>
+            <figcaption>Önce</figcaption>
+          </figure>
+          <figure>
+            <div class="img-holder" style="aspect-ratio:3/4"><span>Sonra — 3:4</span><img src="gorseller/sonra-3.jpg" alt="Bakım sonrası sağlıklı saç görünümü" loading="lazy" width="480" height="640"></div>
+            <figcaption>Sonra</figcaption>
+          </figure>
+        </div>
+        <blockquote class="ba-quote">"Saçlarım ilk kez bu kadar sağlıklı hissettiriyor. Bakım seansları mucize." <cite>— Defne T.</cite></blockquote>
+      </div>
+
+      <div class="ba-pair">
+        <div class="ba-images">
+          <figure>
+            <div class="img-holder" style="aspect-ratio:3/4"><span>Önce — 3:4</span><img src="gorseller/once-4.jpg" alt="Müşteri saçı, kesim öncesi" loading="lazy" width="480" height="640"></div>
+            <figcaption>Önce</figcaption>
+          </figure>
+          <figure>
+            <div class="img-holder" style="aspect-ratio:3/4"><span>Sonra — 3:4</span><img src="gorseller/sonra-4.jpg" alt="Modern kesim sonrası şekillendirilmiş saç" loading="lazy" width="480" height="640"></div>
+            <figcaption>Sonra</figcaption>
+          </figure>
+        </div>
+        <blockquote class="ba-quote">"Kesim de dahil her şeyi düşünüyor, danışmanlık gibi." <cite>— Zeynep M.</cite></blockquote>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ TEAM ═════════ -->
+<section id="ekip" class="team reveal" aria-label="Ekip">
+  <hr class="rule wrap">
+  <div class="wrap" style="padding-top:2rem">
+    <h2>Ekip</h2>
+    <div class="team-grid">
+
+      <div class="team-member">
+        <div class="img-holder" style="aspect-ratio:3/4">
+          <span>Stilist — 3:4</span>
+          <img src="gorseller/ekip-1.jpg" alt="Vera Demirtaş, kurucu stilist portresi" loading="lazy" width="480" height="640">
+        </div>
+        <h3>Vera Demirtaş</h3>
+        <p class="team-role">Kurucu · Renk Uzmanı</p>
+        <p>On beş yıl Londra'da çalıştı, uzmanlığı balyaj ve doğal ton geçişleri. Atelier Vera'yı 2019'da açtı.</p>
+      </div>
+
+      <div class="team-member">
+        <div class="img-holder" style="aspect-ratio:3/4">
+          <span>Stilist — 3:4</span>
+          <img src="gorseller/ekip-2.jpg" alt="İpek Arslan, kıdemli stilist portresi" loading="lazy" width="480" height="640">
+        </div>
+        <h3>İpek Arslan</h3>
+        <p class="team-role">Kıdemli Stilist</p>
+        <p>Kesim ve şekillendirme konusunda yedi yıllık deneyim. Kuru kesim tekniğinde uzman.</p>
+      </div>
+
+      <div class="team-member">
+        <div class="img-holder" style="aspect-ratio:3/4">
+          <span>Stilist — 3:4</span>
+          <img src="gorseller/ekip-3.jpg" alt="Can Yılmaz, stilist portresi" loading="lazy" width="480" height="640">
+        </div>
+        <h3>Can Yılmaz</h3>
+        <p class="team-role">Stilist · Bakım Uzmanı</p>
+        <p>Saç sağlığı ve onarım protokolleri konusunda eğitim almış, Davines sertifikalı.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ INFO ═════════ -->
+<section id="iletisim" class="info reveal" aria-label="İletişim bilgileri">
+  <hr class="rule wrap">
+  <div class="info-grid wrap" style="padding-top:2rem">
+    <div class="info-left">
+      <h2>Bilgi</h2>
+      <address class="info-address">
+        Teşvikiye Mah. Vali Konağı Cad. No:87<br>
+        Şişli / İstanbul
+      </address>
+
+      <div class="status-badge" id="statusBadge" aria-live="polite">
+        <span class="status-dot" id="statusDot"></span>
+        <span id="statusText">Durum hesaplanıyor…</span>
+      </div>
+
+      <table class="hours-table" aria-label="Çalışma saatleri">
+        <tr><td>Pazartesi</td><td>Kapalı</td></tr>
+        <tr><td>Salı</td><td>10:00 – 19:00</td></tr>
+        <tr><td>Çarşamba</td><td>10:00 – 19:00</td></tr>
+        <tr><td>Perşembe</td><td>10:00 – 19:00</td></tr>
+        <tr><td>Cuma</td><td>10:00 – 19:00</td></tr>
+        <tr><td>Cumartesi</td><td>10:00 – 19:00</td></tr>
+        <tr><td>Pazar</td><td>Kapalı</td></tr>
+      </table>
+    </div>
+    <div class="info-right">
+      <div class="map-holder">Harita alanı</div>
+      <a href="https://www.google.com/maps/search/Teşvikiye+Mah.+Vali+Konağı+Cad.+No:87+Şişli+İstanbul" class="btn-outline" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Yol Tarifi Al
+      </a>
+      <p class="info-policy">Randevunuzu 24 saat önceden bildirerek değiştirebilirsiniz.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ CLOSING CTA ═════════ -->
+<section class="closing" aria-label="Randevu">
+  <div class="wrap">
+    <h2>randevunuzu ayıralım.</h2>
+    <div class="closing-actions">
+      <a href="https://wa.me/905XXXXXXXXX?text=Merhaba%2C%20randevu%20almak%20istiyorum." class="btn-light" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 0 0 .612.616l4.539-1.468A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.94 9.94 0 0 1-5.39-1.583l-.386-.238-2.695.871.898-2.638-.263-.404A9.935 9.935 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        Randevu Al
+      </a>
+      <a href="tel:+90212XXXXXXX" class="closing-phone">0212 XXX XX XX</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ FOOTER ═════════ -->
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 Atelier Vera</span>
+    <div class="footer-social" aria-label="Sosyal medya">
+      <a href="#" aria-label="Instagram">
+        <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- ═════════ WHATSAPP FAB ═════════ -->
+<a href="https://wa.me/905XXXXXXXXX?text=Merhaba%2C%20randevu%20almak%20istiyorum." class="wa-fab" target="_blank" rel="noopener" aria-label="WhatsApp ile iletişime geçin">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 0 0 .612.616l4.539-1.468A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.94 9.94 0 0 1-5.39-1.583l-.386-.238-2.695.871.898-2.638-.263-.404A9.935 9.935 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+  <span class="wa-fab-text">WhatsApp'tan yazın</span>
+</a>
+
+<!-- ═════════ MOBILE BOTTOM BAR ═════════ -->
+<div class="mobile-bar" aria-label="Hızlı iletişim">
+  <a href="tel:+90212XXXXXXX" class="mb-call">
+    <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Ara
+  </a>
+  <a href="https://www.google.com/maps/search/Teşvikiye+Mah.+Vali+Konağı+Cad.+No:87+Şişli+İstanbul" class="mb-dir" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+    Yol Tarifi
+  </a>
+</div>
+
+<script>
+/* ── Mobile nav toggle ── */
+(function(){
+  var btn=document.querySelector('.nav-toggle');
+  var links=document.querySelector('.nav-links');
+  if(!btn||!links)return;
+  btn.addEventListener('click',function(){
+    var open=links.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open);
+  });
+  links.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){links.classList.remove('open');btn.setAttribute('aria-expanded','false')});
+  });
+})();
+
+/* ── Open / Closed status badge ── */
+(function(){
+  var hours={
+    1:null, /* Pazartesi - kapalı */
+    2:{open:10,close:19},
+    3:{open:10,close:19},
+    4:{open:10,close:19},
+    5:{open:10,close:19},
+    6:{open:10,close:19},
+    0:null  /* Pazar - kapalı */
+  };
+  var dayNames=['Pazar','Pazartesi','Salı','Çarşamba','Perşembe','Cuma','Cumartesi'];
+
+  function update(){
+    var now=new Date();
+    /* Force Istanbul time */
+    var ist=new Date(now.toLocaleString('en-US',{timeZone:'Europe/Istanbul'}));
+    var day=ist.getDay();
+    var h=ist.getHours();
+    var m=ist.getMinutes();
+    var current=h+m/60;
+    var today=hours[day];
+    var dot=document.getElementById('statusDot');
+    var txt=document.getElementById('statusText');
+    if(!dot||!txt)return;
+
+    if(today&&current>=today.open&&current<today.close){
+      dot.className='status-dot open';
+      var closeH=today.close;
+      txt.textContent='Şu an açık · '+String(closeH).padStart(2,'0')+':00\'de kapanıyor';
+    }else{
+      dot.className='status-dot closed';
+      /* find next open day */
+      for(var i=1;i<=7;i++){
+        var nd=(day+i)%7;
+        if(hours[nd]){
+          var label=(i===1)?'yarın':dayNames[nd];
+          var oh=String(hours[nd].open).padStart(2,'0');
+          txt.textContent='Şu an kapalı · '+label+' '+oh+':00\'da açılıyor';
+          return;
+        }
+      }
+      txt.textContent='Şu an kapalı';
+    }
+  }
+  update();
+  setInterval(update,60000);
+})();
+
+/* ── Reveal — IntersectionObserver fallback ── */
+(function(){
+  if(CSS.supports&&CSS.supports('animation-timeline','view'))return;
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+
+  var els=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){
+    /* No IO: keep everything visible (safe default) */
+    return;
+  }
+  els.forEach(function(el){el.classList.add('reveal--hidden')});
+  var stagger=0;
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        var delay=stagger*70;
+        stagger++;
+        setTimeout(function(){e.target.classList.remove('reveal--hidden');e.target.classList.add('reveal--visible')},delay);
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:0.12});
+  els.forEach(function(el){io.observe(el)});
+})();
+</script>
+</body>
+</html>
