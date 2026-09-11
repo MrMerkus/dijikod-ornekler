@@ -14,7 +14,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
 <script type="application/ld+json">
 {
@@ -76,34 +75,13 @@ html{scroll-behavior:smooth}body{background:var(--bg);color:var(--dark);font:var
 @media(min-width:769px){.mobile-bar{display:none}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}.reveal{opacity:1!important;transform:none!important}.marquee-inner,.hero-badge svg{animation:none!important}.status-badge .dot{animation:none!important}}
 .espresso-photo{width:clamp(96px,16vw,160px);margin-top:1rem}
 @media(min-width:769px){.card-espresso{aspect-ratio:1}}
-
-/* 3B katman: WebGL yalnızca hero'da, gövde CSS perspektifiyle derinleşir. */
-.hero-visual{perspective:1000px}
-.hero-3d{position:absolute;z-index:2;right:86%;bottom:6%;width:58%;height:58%;border-radius:18%;background:radial-gradient(ellipse at 50% 78%,rgba(var(--dark-rgb),.2) 0,rgba(var(--dark-rgb),.08) 38%,transparent 74%);opacity:0;pointer-events:none;touch-action:pan-y;transition:opacity 600ms ease}
-.hero-3d.is-ready{opacity:1;pointer-events:auto}
-.hero-badge{z-index:3;pointer-events:none}
-@media(max-width:768px){.hero-3d{right:4%;bottom:4%;width:30%;height:34%}}
-@media(max-width:480px){.hero-3d{display:none}}
-.depth-section{position:relative;isolation:isolate;overflow:hidden;perspective:1200px;transform-style:preserve-3d}
-.depth-section::before{content:"";position:absolute;z-index:0;inset:-18% -8%;background:radial-gradient(circle at 50% 0,rgba(var(--accent-rgb),.16),transparent 62%),linear-gradient(135deg,rgba(var(--mid-rgb),.08),transparent 55%);transform:translate3d(0,0,-48px) scale(1.08);transform-origin:center;pointer-events:none}
-.depth-section.is-in-view::before{transform:translate3d(0,-8px,-48px) scale(1.08)}
-.depth-section>*{position:relative;z-index:1}
-.depth-section h2{transform:translateZ(24px) scale(.98);transition:transform 700ms cubic-bezier(.16,1,.3,1)}
-.depth-section.is-in-view h2{transform:translateZ(0) scale(1)}
-.bento-card{transform-style:preserve-3d;will-change:transform}
-@media (hover:hover) and (pointer:fine){.bento-card.tilt-enabled:hover{transform:perspective(900px) rotateX(var(--tilt-x,0deg)) rotateY(var(--tilt-y,0deg)) translateY(-4px)}}
-@supports (animation-timeline:scroll()){
-  .depth-section::before{animation:depth-parallax 1ms linear both;animation-timeline:scroll();animation-range:cover 0% cover 100%}
-  @keyframes depth-parallax{from{transform:translate3d(0,-18px,-48px) scale(1.08)}to{transform:translate3d(0,18px,-48px) scale(1.08)}}
-}
-@media(prefers-reduced-motion:reduce){.hero-3d{transition:none}.depth-section::before{transform:none!important;animation:none!important}.depth-section h2{transform:none!important;transition:none}.bento-card{will-change:auto}}
 </style>
 </head>
 
 <body>
 <header><nav class="nav-bar" aria-label="Ana navigasyon"><div class="nav-pill"><a href="#menu">Menü</a><a href="#rehber">Rehber</a><a href="#nerede">Nerede</a><a href="#menu" class="nav-cta">Sipariş</a></div></nav></header>
 <main>
-  <section class="hero" aria-labelledby="hero-heading"><div class="hero-inner"><div class="hero-copy"><h1 id="hero-heading"><span class="line">günün</span><span class="line orange">en iyi</span><span class="line outline">demliği</span></h1><p class="hero-sub">Cezve közde, espresso doğru çekilir. Moda'da mahalle sıcaklığını iki fincan arasında kuruyoruz.</p><div class="hero-btns"><a href="#menu" class="btn btn-fill">Menüyü Gör</a><a href="#nerede" class="btn btn-outline">Nerede?</a></div></div><div class="hero-visual"><canvas id="hero-3d" class="hero-3d" aria-hidden="true"></canvas><div class="hero-photo img-wrap" data-ratio="3:4" data-label="Espresso fincanı — 3:4"><img src="gorseller/hero.jpg" alt="Beyaz porselende espresso ve yanında kahve çekirdekleri" width="900" height="1200"></div><div class="hero-badge" aria-hidden="true"><svg viewBox="0 0 100 100"><defs><path id="badge-path" d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0" fill="none"/></defs><circle cx="50" cy="50" r="46" fill="none" stroke="var(--dark)" stroke-width="1.5" opacity=".18"/><g class="badge-ring"><text><textPath href="#badge-path">MODA · KADIKÖY · 2021 · MODA · KADIKÖY · 2021 · </textPath></text></g><circle cx="50" cy="50" r="6" fill="var(--accent)"/></svg></div></div></div></section>
+  <section class="hero" aria-labelledby="hero-heading"><div class="hero-inner"><div class="hero-copy"><h1 id="hero-heading"><span class="line">günün</span><span class="line orange">en iyi</span><span class="line outline">demliği</span></h1><p class="hero-sub">Cezve közde, espresso doğru çekilir. Moda'da mahalle sıcaklığını iki fincan arasında kuruyoruz.</p><div class="hero-btns"><a href="#menu" class="btn btn-fill">Menüyü Gör</a><a href="#nerede" class="btn btn-outline">Nerede?</a></div></div><div class="hero-visual"><div class="hero-photo img-wrap" data-ratio="3:4" data-label="Espresso fincanı — 3:4"><img src="gorseller/hero.jpg" alt="Beyaz porselende espresso ve yanında kahve çekirdekleri" width="900" height="1200"></div><div class="hero-badge" aria-hidden="true"><svg viewBox="0 0 100 100"><defs><path id="badge-path" d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0" fill="none"/></defs><circle cx="50" cy="50" r="46" fill="none" stroke="var(--dark)" stroke-width="1.5" opacity=".18"/><g class="badge-ring"><text><textPath href="#badge-path">MODA · KADIKÖY · 2021 · MODA · KADIKÖY · 2021 · </textPath></text></g><circle cx="50" cy="50" r="6" fill="var(--accent)"/></svg></div></div></div></section>
   <div class="marquee" aria-hidden="true"><div class="marquee-inner"><span>TÜRK KAHVESİ · ESPRESSO · DEMLİ ÇAY · MODA'DA · HER GÜN 07:30'DA · </span><span>TÜRK KAHVESİ · ESPRESSO · DEMLİ ÇAY · MODA'DA · HER GÜN 07:30'DA · </span></div></div>
   <section class="bento reveal" aria-labelledby="bento-heading"><h2 class="section-heading" id="bento-heading">Bugün ne var</h2><div class="bento-grid"><article class="bento-card card-big reveal"><div><p class="card-tag">Bizim merkezimiz</p><h3 class="card-name">Türk<br>kahvesi</h3><p class="card-lead">Közde pişer, tek ya da duble gelir; yanında lokum eksik olmaz.</p><p class="card-notes">cezve · köz · lokum</p></div><div class="img-wrap" data-ratio="1:1" data-label="Türk kahvesi — 1:1"><img src="gorseller/kahve-turk.jpg" alt="Bakır cezvede Türk kahvesi ve yanında lokum" width="900" height="900" loading="lazy"></div><p class="card-price">Tek ₺85 · Duble ₺110</p></article><article class="bento-card card-espresso reveal"><div><p class="card-tag">Espresso bazlı</p><h3 class="card-name">Sütlü<br>ya da sade</h3></div><div class="img-wrap espresso-photo" data-ratio="1:1" data-label="Latte art — 1:1"><img src="gorseller/kahve-latte.jpg" alt="Ahşap tepside latte art" width="900" height="900" loading="lazy"></div><div class="drink-list"><div class="drink-row"><span class="name">Latte</span><span class="price">₺130</span></div><div class="drink-row"><span class="name">Cappuccino</span><span class="price">₺125</span></div><div class="drink-row"><span class="name">Flat white</span><span class="price">₺125</span></div></div><p class="card-note">Alternatif sütler ücretsiz.</p></article><article class="bento-card card-sweet reveal"><div class="img-wrap" data-ratio="1:1" data-label="Çay ve tatlı — 1:1"><img src="gorseller/cay-tatli.jpg" alt="İnce belli bardakta demli çay, lokum ve kahve" width="900" height="900" loading="lazy"></div><div class="card-content"><p class="card-tag">Çay ve tatlı</p><h3 class="card-name">Demli bir ara</h3><p>Çay, lokum ve günün tatlısı; kahvenin yanına da tek başına da.</p></div></article><article class="bento-card card-mekan reveal"><div class="card-content"><p class="card-tag">Mekân</p><h3 class="card-name">Dört masa,<br>sokak sesi.</h3><p>Dört masa içeride, sokakta tabure. Yer bulamazsan fincanı Moda'ya çıkarırız.</p></div><div class="img-wrap" data-ratio="4:3" data-label="Mekân — 4:3"><img src="gorseller/mekan-1.jpg" alt="Demlik Kahve'nin aydınlık köşesinde tepside iki fincan" width="1200" height="900" loading="lazy"></div></article><article class="bento-card card-insta reveal"><a href="https://instagram.com" target="_blank" rel="noopener" class="insta-link" aria-label="Demlik Kahve Instagram sayfası"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>@demlikkahve</a></article></div></section>
   <section class="guide reveal" id="rehber" aria-labelledby="guide-heading"><div class="guide-inner"><div class="guide-photo"><div class="img-wrap" data-ratio="1000:1242" data-label="İçecek rehberi — 4:5"><img src="gorseller/menu-rehber.jpg" alt="Demlik Kahve'de içecek çeşitlerini anlatan rehber panosu" width="1000" height="1242" loading="lazy"></div></div><div class="guide-copy"><p class="card-tag">İmza bölümümüz</p><h2 id="guide-heading">Ne içsem?</h2><p>Kahve adları karıştı mı? Panoya bak, tarif et, biz yaparız. En sevdiğin fincanı bulmanın kestirme yolu burada.</p><ul class="guide-list"><li><strong>Espresso</strong><span>Kısa, yoğun ve süt yok; kahvenin doğrudan hâli.</span></li><li><strong>Americano</strong><span>Espressonun üzerine sıcak su; daha uzun ve berrak.</span></li><li><strong>Latte</strong><span>Espresso, bol sıcak süt ve ince bir köpük.</span></li><li><strong>Cappuccino</strong><span>Espresso, sıcak süt ve daha dolgun köpük.</span></li></ul></div></div></section>
@@ -119,48 +97,6 @@ html{scroll-behavior:smooth}body{background:var(--bg);color:var(--dark);font:var
 (function(){var hours={0:{open:'09:00',close:'17:00'},1:{open:'07:30',close:'18:00'},2:{open:'07:30',close:'18:00'},3:{open:'07:30',close:'18:00'},4:{open:'07:30',close:'18:00'},5:{open:'07:30',close:'18:00'},6:{open:'07:30',close:'18:00'}};function toMin(s){var p=s.split(':');return Number(p[0])*60+Number(p[1])}function fmt(s){return s.replace(':','.')}function suffix(s){return parseInt(s,10)>=17?"'de":"'da"}function update(){var el=document.getElementById('status-badge');if(!el)return;var now=new Date(),day=now.getDay(),nowMin=now.getHours()*60+now.getMinutes(),today=hours[day],openMin=toMin(today.open),closeMin=toMin(today.close);if(nowMin>=openMin&&nowMin<closeMin){el.className='status-badge open';el.innerHTML='<span class="dot"></span>Şu an açık · '+fmt(today.close)+suffix(today.close)+' kapanıyor';return}var nextDay=(day+1)%7,next=nowMin<openMin?today:hours[nextDay],when=nowMin<openMin?'bugün ':'yarın ';el.className='status-badge closed';el.innerHTML='<span class="dot"></span>Şu an kapalı · '+when+fmt(next.open)+suffix(next.open)+' açılıyor'}update();setInterval(update,60000)})();
 (function(){var supportsTimeline=window.CSS&&CSS.supports&&CSS.supports('animation-timeline','view()');if(supportsTimeline)return;var els=document.querySelectorAll('.reveal');if(!els.length)return;if(!('IntersectionObserver' in window)){els.forEach(function(el){el.style.opacity='1';el.style.transform='none'});return}var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.style.transition='opacity 700ms cubic-bezier(.16,1,.3,1),transform 700ms cubic-bezier(.16,1,.3,1)';entry.target.style.opacity='1';entry.target.style.transform='translateY(0)';observer.unobserve(entry.target)}})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});els.forEach(function(el){observer.observe(el)})})();
 (function(){document.querySelectorAll('img').forEach(function(img){function hide(){img.style.visibility='hidden'}img.addEventListener('error',hide);if(img.complete&&img.naturalWidth===0)hide()})})();
-</script>
-<script>
-(function(){
-  function initHero3D(){
-    var canvas=document.getElementById('hero-3d');
-    if(!canvas||!window.THREE||!window.WebGLRenderingContext)return;
-    var testCanvas=document.createElement('canvas'),gl;
-    try{gl=testCanvas.getContext('webgl')||testCanvas.getContext('experimental-webgl')}catch(error){return}
-    if(!gl)return;
-    var T=window.THREE,renderer,scene,camera,cup,steam=[],dragging=false,lastX=0,rotationOffset=0,visible=true,raf=0,reduced=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    try{renderer=new T.WebGLRenderer({canvas:canvas,antialias:true,alpha:true,powerPreference:'high-performance'})}catch(error){return}
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,1.5));scene=new T.Scene();camera=new T.PerspectiveCamera(28,1,.1,100);camera.position.set(.15,.15,15.5);camera.lookAt(0,.9,0);
-    var small=window.innerWidth<=768,radial=small?16:32,tubular=small?12:24;
-    var ceramic=new T.MeshStandardMaterial({color:0xFFF6E5,roughness:.6,metalness:.05}),coffeeMat=new T.MeshStandardMaterial({color:0x14342B,roughness:.25,metalness:.05}),cupGroup=new T.Group();
-    var saucer=new T.Mesh(new T.CylinderGeometry(1.75,1.75,.12,radial),ceramic);saucer.position.y=-.78;cupGroup.add(saucer);
-    var bowl=new T.Mesh(new T.CylinderGeometry(1.25,1.02,1.3,radial),ceramic);bowl.position.y=.05;cupGroup.add(bowl);
-    var rim=new T.Mesh(new T.TorusGeometry(1.2,.055,Math.max(6,radial/2),tubular),ceramic);rim.position.y=.7;rim.rotation.x=Math.PI/2;cupGroup.add(rim);
-    var coffee=new T.Mesh(new T.CylinderGeometry(1.13,1.13,.045,radial),coffeeMat);coffee.position.y=.68;cupGroup.add(coffee);
-    var handle=new T.Mesh(new T.TorusGeometry(.52,.115,Math.max(6,radial/2),tubular,Math.PI),ceramic);handle.position.set(1.28,.05,0);handle.rotation.x=Math.PI/2;cupGroup.add(handle);
-    cupGroup.rotation.x=-.08;cupGroup.position.y=-.05;cup= cupGroup;scene.add(cup);
-    for(var i=0;i<22;i++){var material=new T.MeshBasicMaterial({color:0xFFF6E5,transparent:true,opacity:.25,depthWrite:false}),particle=new T.Mesh(new T.SphereGeometry(.055,Math.max(5,radial/3),Math.max(4,radial/4)),material),phase=i/22,baseX=((i%5)-2)*.17,baseZ=((i%3)-1)*.1;baseX+=Math.sin(i*2.7)*.08;particle.position.set(baseX,.83+(i%4)*.08,baseZ);cup.add(particle);steam.push({mesh:particle,phase:phase,baseX:baseX,baseY:particle.position.y,baseZ:baseZ})}
-    scene.add(new T.AmbientLight(0xFFF6E5,0.32));var key=new T.DirectionalLight(0xFFF6E5,1.75);key.position.set(-3,4,5);scene.add(key);var accent=new T.PointLight(0xFF6B35,0.85,8);accent.position.set(3,1,3);scene.add(accent);
-    function resize(){var width=Math.max(1,canvas.clientWidth),height=Math.max(1,canvas.clientHeight);camera.aspect=width/height;camera.updateProjectionMatrix();renderer.setSize(width,height,false)}
-    function render(time){var t=(time||0)*.001;cup.rotation.y=t*.16+rotationOffset;for(var i=0;i<steam.length;i++){var p=steam[i],phase=(t*.12+p.phase)%1,wave=Math.sin(phase*6.28+p.phase*9);p.mesh.position.y=p.baseY+phase*1.55;p.mesh.position.x=p.baseX+wave*.12;p.mesh.position.z=p.baseZ+Math.cos(phase*5+p.phase*7)*.06;p.mesh.material.opacity=Math.sin(Math.PI*phase)*.34;p.mesh.scale.setScalar(.72+Math.sin(phase*8+p.phase)*.18)}renderer.render(scene,camera)}
-    function stop(){if(raf){cancelAnimationFrame(raf);raf=0}}
-    function start(){if(reduced||document.hidden||!visible||raf)return;raf=requestAnimationFrame(frame)}
-    function frame(time){raf=0;if(reduced||document.hidden||!visible)return;render(time);start()}
-    function sync(){if(reduced||document.hidden||!visible)stop();else start()}
-    resize();render(0);canvas.classList.add('is-ready');
-    if(!reduced){canvas.addEventListener('pointerdown',function(event){dragging=true;lastX=event.clientX;canvas.setPointerCapture&&canvas.setPointerCapture(event.pointerId)});canvas.addEventListener('pointermove',function(event){if(!dragging)return;rotationOffset+=(event.clientX-lastX)*.008;lastX=event.clientX});canvas.addEventListener('pointerup',function(){dragging=false});canvas.addEventListener('pointercancel',function(){dragging=false});start()}
-    if('IntersectionObserver' in window){new IntersectionObserver(function(entries){visible=entries[0].isIntersecting;sync()},{threshold:.05}).observe(canvas)}
-    document.addEventListener('visibilitychange',sync);var resizeTimer;window.addEventListener('resize',function(){clearTimeout(resizeTimer);resizeTimer=setTimeout(resize,150)});
-  }
-  function initDepthLayer(){
-    var sections=document.querySelectorAll('.bento,.guide,.menu-section,.story,.location,.cta-block');sections.forEach(function(section){section.classList.add('depth-section')});
-    var reduced=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches,cards=document.querySelectorAll('.bento-card');
-    if(!reduced&&window.matchMedia&&window.matchMedia('(hover:hover) and (pointer:fine)').matches){cards.forEach(function(card){card.classList.add('tilt-enabled');card.addEventListener('pointermove',function(event){var rect=card.getBoundingClientRect(),x=(event.clientX-rect.left)/rect.width-.5,y=(event.clientY-rect.top)/rect.height-.5;card.style.setProperty('--tilt-x',(-y*8).toFixed(2)+'deg');card.style.setProperty('--tilt-y',(x*8).toFixed(2)+'deg')});card.addEventListener('pointerleave',function(){card.style.setProperty('--tilt-x','0deg');card.style.setProperty('--tilt-y','0deg')})})}
-    if(reduced||!('IntersectionObserver' in window)){sections.forEach(function(section){section.classList.add('is-in-view')});return}
-    var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting)entry.target.classList.add('is-in-view')})},{threshold:.08});sections.forEach(function(section){observer.observe(section)})
-  }
-  initHero3D();initDepthLayer();
-})();
 </script>
 </body>
 </html>
